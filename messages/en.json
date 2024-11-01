@@ -1,0 +1,52 @@
+{
+    "Menu": {
+      "Home": "HOME",
+      "Our": "OUR",
+      "Product": "PRODUCT",
+      "Library": "LIBRARY",
+      "News": "NEWS",
+      "Recruitment" : "RECRUITMENT",
+      "Contact" : "CONTACT"
+    },
+  
+    "Home": {
+      "Title": "WELCOME TO",
+      "Content": "Established since 02/2019, By 09/2022 we have ISO 9001-2015 certification and quality and safety certification for products.",
+      "SeeMore": "See more",
+      "Box1": "LIMIT POLLUTION",
+      "Box1Content": "Produced from 100% natural coconut shell charcoal and pressed into pellets, without adding fire oil and other additives such as: sawdust, lime stone…",
+      "Box2": "SAFE TO USE",
+      "Box2Content": "Easy to burn, hotter, longer heat radiation, cleaner than other wood charcoal according to traditional methods.",
+      "Box3": "EASY TO PRESERVE",
+      "Box3Content": "Packaged in attractive packaging and suitable for many purposes, not sticky charcoal dust, hard and unbreakable if normally bumped…",
+      "We": "WE",
+      "Company": "Cao Nguyen Binh Phuoc Import Export Co., Ltd.",
+      "Intro": "Is a company that produces and trades clean coconut shell charcoal. We focus on developing clean, environmentally friendly products. We are committed to bringing to the market products that meet the quality as announced.",
+      "Established": "Established",
+      "EstablishedContent": "Established since 02/2019, By 09/2022 we have ISO 9001-2015 certification and quality and safety certification for products. Currently, with a production capacity of 15 tons of finished products/ day, we can meet the needs of customers in the fastest time.",
+      "Product": "Product",
+      "ProductContent": "Coconut shell charcoal is a product that is suitable for environmental friendly trends compared to other traditional charcoals to serve human needs. Charcoal is used for shisha, BBQ grilling, heating. No harmful chemicals are emitted when used, no smoke, ideal ash content 2%, long burning, no smell, not self-extinguishing, can be used indoors… those are the advantages that make coconut shell charcoal increasingly popular.</br>With a compact business scale, applying advanced technology, using economical raw materials in a closed production process, we create products that ensure quality and reasonable prices. Confident with competitive advantages in the market.",
+      "CoalProduct": "COAL PRODUCT",
+      "OtherProduct": "OTHER PRODUCT",
+      "WhyChooseUs": "WHY CHOOSE US?",
+      "SmellFree": "Smell free",
+      "SmellFreeContent": "Does not smell on food when grilling",
+      "SmokeFree": "Smoke free",
+      "SmokeFreeContent": "Does not create smoke that causes discomfort to the respiratory system",
+      "Temperature": "Calorific value > 7000kcal/kg",
+      "TemperatureContent": "White charcoal has high calorific value, fast cooking food, helps increase flavor",
+      "Concentration": "Low ash content",
+      "ConcentrationContent": "Natural bright gray ash color, ash mass only 2% of the total burning charcoal mass. The ash remains the same shape as the charcoal. No dust is blown around, making it easy to clean",
+      "BurnTime": "Long burning time",
+      "BurnTimeContent": "Burning time >3h for BBQ charcoal and > 2h for other types of charcoal (3 times that of natural wood charcoal)",
+      "HealthProtect": "Protect human health",
+      "HealthProtectContent": "Coconut shell charcoal is the raw material of activated charcoal that is applied in many areas of life such as: water filtration, exhaust gas, odor removal, dentistry, cosmetics, medicine…",
+      "EnvironmentFriendly": "Environmentally friendly",
+      "EnvironmentFriendlyContent": "The main ingredient of coconut shell charcoal is coconut shell after using rice and fiber, the production process only mixes food additives, no chemicals and especially does not harm any tree…",
+      "Present": "WE ARE PRESENT IN 19 COUNTRIES",
+      "Pride": "Proud to be the only company in Vietnam with a factory scale, capacity and consumption volume</br>Reaching one container of finished products/day to meet the most demanding markets",
+      "PrideMobile": "Proud to be the only company in Vietnam with a factory scale, capacity and consumption volume Reaching one container of finished products/day to meet the most demanding markets",
+      "News": "NEWS"
+    }
+  }
+  

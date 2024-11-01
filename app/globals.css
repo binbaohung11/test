@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "OSBold";
+  src: url("./fonts/OpenSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RBRegular";
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.ql-indent-1 {
+  margin-left: 1.5rem;
+  /* Adjust the left margin for indentation */
+  /* You can also add other styles as needed */
+  /* Example: */
+  /* border-left: 2px solid #ccc; */
+  /* padding-left: 1rem; */
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden; /* Để ẩn phần hình ảnh bên ngoài */
+}
+
+.slider-images {
+  display: flex;
+  transition: transform 0.5s ease; /* Hiệu ứng chuyển động mượt */
+}
+
+.image-item {
+  min-width: 100%; /* Chiều rộng tối thiểu bằng với chiều rộng của container */
+  flex: 0 0 auto; /* Để không bị co lại */
+}
+
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  scrollbar-width: none;     /* For Firefox */
+}

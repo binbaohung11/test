@@ -1,0 +1,61 @@
+{
+  "Menu": {
+    "Home": "TRANG CHỦ",
+    "Our": "CHÚNG TÔI",
+    "Product": "SẢN PHẨM",
+    "Library": "THƯ VIỆN",
+    "News": "TIN TỨC",
+    "Recruitment": "TUYỂN DỤNG",
+    "Contact": "LIÊN HỆ"
+  },
+
+  "Home": {
+    "Title": "WELLCOME TO",
+    "Content": "Được thành lập từ 02/2019, Đến 09/2022 chúng tôi đã có chứng nhận ISO 9001-2015 và các chứng chỉ kiểm định về chất lượng và an toàn cho sản phẩm.",
+    "SeeMore": "Xem thêm",
+    "Box1": "HẠN CHẾ Ô NHIỄM",
+    "Box1Content": "Được sản xuất từ 100% than gáo dừa tự nhiên và ép thành dạng viên, không trộn thêm dầu hoả và các chất phụ gia khác như: mạt cưa, đá vôi…",
+    "Box2": "SỬ DỤNG AN TOÀN",
+    "Box2Content": "Đặc tính dể đốt cháy, nóng hơn, toả nhiệt trong thời gian lâu hơn, sạch hơn các loại than làm từ các loại gỗ khác theo phương pháp truyền thống.",
+    "Box3": "DỄ DÀNG BẢO QUẢN",
+    "Box3Content": "Được đóng gói với bao bì bắt mắt và phù hợp với nhiều mục đích sử dụng, không dính muội than, lại cứng và không thể vỡ nếu va đập thông thường…",
+    "We": "CHÚNG TÔI",
+    "Company": "Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+    "Intro": "Là doanh nghiệp sản suất và kinh doanh than gáo sạch từ dừa. Chúng tôi chú trọng việc phát triển sản phẩm sạch, thân thiện với môi trường. Chúng tôi cam kết đưa ra thị trường những sản phẩm đạt chất lượng theo công bố.",
+    "Established": "Thành Lập",
+    "EstablishedContent": "Được thành lập từ 02/2019, Đến 09/2022 chúng tôi đã có chứng nhận ISO 9001-2015 và các chứng chỉ kiểm định về chất lượng và an toàn cho sản phẩm. Hiện tại, với năng lực sản xuất 15 tấn thành phẩm/ ngày chúng tôi có thể đáp ứng nhu cầu của khách hàng trong thời gian sớm nhất.",
+    "Product": "Sản phẩm",
+    "ProductContent": "Than gáo dừa là sản phẩm phù hợp với xu hướng thân thiện môi trường so với các loại than truyền thống khác phục vụ nhu cầu con người. Than được dùng hút shisha, nướng BBQ, sưởi. Không hóa chất độc hại tỏa ra khi dùng, không khói hàm lượng tro lý tưởng 2%, duy trì cháy lâu, không mùi, không tự tắt, dùng được trong nhà… đó là những ưu việt giúp cho than gáo dừa ngày càng được ưa chuộng.",
+    "ProductContent2": "Với quy mô doanh nghiệp nhỏ gọn, áp dụng kỹ thuật tiên tiến, sử dụng nguyên liệu tiết kiệm trong quy trình sản xuất khép kín, chúng tôi tạo ra những sản phẩm đảm bảo chất lượng và giá thành hợp lý. Tự tin với lợi thế cạnh tranh trên thị trường.",
+    "CoalProduct": "SẢN PHẨM THAN",
+    "OtherProduct": "SẢN PHẨM KHÁC",
+    "WhyChooseUs": "VÌ SAO CHỌN CHÚNG TÔI?",
+    "SmellFree": "Không mùi",
+    "SmellFreeContent": "Khi nướng không bị ám mùi lên đồ ăn",
+    "SmokeFree": "Không khói",
+    "SmokeFreeContent": "Không tạo ra khói gây khó chịu cho hệ hô hấp",
+    "Temperature": "Nhiệt lượng > 7000kcal/kg",
+    "TemperatureContent": "Than trắng đạt nhiệt lượng cao, nhanh chín đồ ăn, giúp tăng hương vị",
+    "Concentration": "Hàm lượng tro thấp",
+    "ConcentrationContent": "Màu tro xám sáng tự nhiên , khối lượng tàn chỉ 2% trên tổng khối lượng than đốt . Tro tàn vẫn giữ nguyên hình dạng than . Không bay bụi ra xung quanh , giúp dễ vệ sinh",
+    "BurnTime": "Thời gian cháy lâu",
+    "BurnTimeContent": "Thời lượng cháy >3h cho than BBQ và > 2h cho các loại than khác ( gấp 3 lần than củi tự nhiên )",
+    "HealthProtect": "Bảo vệ sức khoẻ con người",
+    "HealthProtectContent": "Than gáo dừa là nguyên liệu của than hoạt tính được ứng dụng nhiều trong các lĩnh vực của đời sống như : lọc nước, khí thải, khử mùi, nhà khoa, Mỹ phẩm , y tế…",
+    "EnvironmentFriendly": "Thân thiện với môi trường",
+    "EnvironmentFriendlyContent": "Nguyên liệu chính của than gáo dừa là gáo dừa sau khi sử dụng cơm và xơ, quá trình sản xuất chỉ pha trộn phụ gia thực phẩm, không hoá chất và đặc biệt là không chặt hại bất kỳ loại cây nào…",
+    "Present": "CHÚNG TÔI ĐÃ CÓ MẶT TẠI 19 QUỐC GIA",
+    "Pride": "Tự Hào Là Doanh Nghiệp Duy Nhất Tại Việt Nam Có Quy Mô Nhà Máy, Công Suất Và Sản Lượng</br>Tiêu Thụ Đạt Một Container Thành Phẩm/Ngày Đáp Ứng Được Các Thị Trường Khó Tính",
+    "PrideMobile": "Tự Hào Là Doanh Nghiệp Duy Nhất Tại Việt Nam Có Quy Mô Nhà Máy, Công Suất Và Sản Lượng Tiêu Thụ Đạt Một Container Thành Phẩm/Ngày Đáp Ứng Được Các Thị Trường Khó Tính",
+    "News": "TIN TỨC"
+  },
+
+  "Footer": {
+    "Title": "CÔNG TY TNHH XUẤT NHẬP KHẨU CAO NGUYÊN BÌNH PHƯỚC",
+    "Address": "ĐỊA CHỈ",
+    "Contact": "LIÊN HỆ",
+    "Recruitment": "TUYỂN DỤNG",
+    "News": "TIN TỨC",
+    "Connect" : "Kết Nối Với Chúng Tôi"
+  }
+}
