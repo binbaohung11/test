@@ -9,31 +9,33 @@ import News from "@/components/Home/News";
 
 export default function Home() {
   return (
-    <div className="flex flex-col z-0">
-      <div>
-        <Welcome />
+    <>
+      <div className="flex flex-col z-0">
+        <div>
+          <Welcome />
+        </div>
+        <div>
+          <Introduction />
+        </div>
+        <div>
+          <MainProduct />
+        </div>
+        <div>
+          <CoalProduct />
+        </div>
+        <div>
+          <OtherProduct />
+        </div>
+        <div>
+          <WhyChooseUs />
+        </div>
+        <div>
+          <Present />
+        </div>
+        <div>
+          <News />
+        </div>
       </div>
-      <div>
-        <Introduction />
-      </div>
-      <div>
-        <MainProduct />
-      </div>
-      <div>
-        <CoalProduct />
-      </div>
-      <div>
-        <OtherProduct />
-      </div>
-      <div>
-        <WhyChooseUs />
-      </div>
-      <div>
-        <Present />
-      </div>
-      <div>
-        <News />
-      </div>
-    </div>
+    </>
   );
 }

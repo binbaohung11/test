@@ -7,7 +7,7 @@ const PathLink = () => {
 
   const breadcrumbs: { [key: string]: React.ReactNode } = {
     "[locale]/our/introduction": (
-      <div className="text-[10px] lg:text-[18px] xl:text-[24px]">
+      <div className="text-[10px] md:text-[16px] lg:text-[20px] xl:text-[24px]">
         <span className="text-[#969696]">Chúng tôi {">"} </span>
         <span className="text-black">Giới thiệu chung</span>
       </div>
