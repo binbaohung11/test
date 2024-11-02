@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import logo from "../../assets/image/home/image_logo.png";
-import icon_menu from "../../assets/icons_navbar/icon_menu_main.png";
+import Menu from "./Menu";
 
 const Navbar = ({ locale }: { locale: string }) => {
   const t = useTranslations("Menu");
@@ -109,22 +109,8 @@ const Navbar = ({ locale }: { locale: string }) => {
           </div>
         </div>
 
-        <div className="hidden max-md:block relative w-full">
-          <div className="absolute top-1.5 -left-6  max">
-            <Image src={icon_menu} alt="icon_menu" />
-          </div>
-          <div className="w-full flex items-center justify-center">
-            <div className="w-[25%] ">
-              <Image src={logo} alt="logo" className="w-[36px] h-[36px]" />
-            </div>
-            <div className="w-[70%] text-right  ">
-              <input
-                type="text"
-                className="bg-[#D9D9D9] py-1 px-5 rounded-[15px]"
-              />
-            </div>
-          </div>
-        </div>
+        {/* Mobile */}
+        <Menu />
       </div>
     </div>
   );

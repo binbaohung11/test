@@ -8,6 +8,25 @@
     "Recruitment": "TUYỂN DỤNG",
     "Contact": "LIÊN HỆ"
   },
+  "Menu-Our": {
+    "Introduction": "Giới Thiệu Chung",
+    "QualityCertificate": "Chứng Chỉ Chất Lượng"
+  },
+
+  "Menu-Product": {
+    "ThanVuong": "Than gáo dừa vuông",
+    "ThanQue": "Than gáo dừa que",
+    "ThanLG": "Than gáo dừa lục giác",
+    "ThanBBQ": "Than gáo dừa BBQ",
+    "ThanNL": "Than gáo dừa nguyên liệu",
+    "HatDieu": "Hạt điều rang muối",
+    "Coconut": "Dừa trái"
+  },
+
+  "Menu-Library": {
+    "Image": "Hình Ảnh",
+    "Video": "Video"
+  },
 
   "Home": {
     "Title": "WELLCOME TO",
@@ -50,12 +69,43 @@
     "News": "TIN TỨC"
   },
 
+  "Our": {},
+
+  "Our-Intro": {
+    "CompanyProfile": "SƠ LƯỢC VỀ CÔNG TY",
+    "IntroBold": "Công ty TNHH XNK Cao Nguyên Bình Phước",
+    "Intro1": " Được thành lập ngày 27/02/2019, Giấy đăng ký kinh doanh số: 3801195652 Sở kế hoạch và đầu tư Bình phước cấp. Vốn điều lệ 10,5 tỷ đồng.",
+    "Intro2": "Công ty tọa lạc tại : Ấp Thuận hòa 2- Xã Thuận lợi- Huyện Đồng phú- Tỉnh bình phước trên diện tích mặt bằng 11.000 m2 ngay tuyến tỉnh lộ 741 rất thuận tiện cho giao thông.",
+    "Intro3": "Chúng tôi tận dụng nguồn nguyên liệu sẵn có tại Việt Nam đó là Gáo dừa khô để sản xuất than gáo dừa - loại than tự nhiên có khả năng sinh nhiệt cực tốt và không chứa các thành phần khí độc hại tới sức khỏe con người.",
+    "Intro4": "Để cho ra đời sản phẩm, quy trình sản xuất THAN GÁO DỪA cũng rất nghiêm ngặt từ khâu nguyên liệu, cho đến việc đốt, hoạt hóa bằng nhiều tác nhân lý hóa theo công nghệ hiện đại. Trong quá trình đốt trong điều kiệm hiếu khí (thiếu khí oxi) sẽ tiêu diệt lượng khói thải, không sinh ra mùi đó là ưu điểm của than gáo dừa so với các loại chất đốt khác.",
+    "Intro5Bold": "Sản phẩm than gáo dừa rất được ưa chuộng trên thị trường bởi những ưu điểm:",
+    "Intro6Bold": "Không khói, Nhiệt lượng cao và toả đều",
+    "Intro7Bold": "Không có hoá chất",
+    "Intro8Bold": "Không mùi gây hại",
+    "Intro9Bold": "Cháy hoàn toàn",
+    "Intro10Bold": "An toàn cho sức khoẻ người dùng",
+    "Intro11Bold": "Mồi lửa nhanh (chỉ tốn khoảng 1-3 phút)",
+    "Intro12Bold": "Thời gian cháy lâu",
+    "Intro13Bold": "Giá thành hợp lý",
+    "Intro14": "Sản phẩm của công ty đã được cấp chứng chỉ của | “ISO 9001-2015”  “ Quacert” “Vinacontrol”  về an toàn vận chuyển đường biển, không hóa chất độc hại.",
+    "Intro15": "Với sứ mệnh “ Sản phẩm sạch cho cuộc sống xanh” chúng tôi cam kết cung cấp ra thị trường sản phẩm đạt chất lượng công bố.",
+    "Product": "SẢN PHẨM",
+    "Product1": "Than gáo dừa được sản xuất từ nguyên liệu chính là gáo dừa khô đã đốt yếm khí nhằm triệt tiêu khói, một phế phẩm nông nghiệp không tham gia vào việc thu hẹp diện tích rừng cây, nhưng là loại năng lượng có khả năng sinh nhiệt cực tốt, không chứa các thành phần khí độc hại tới sức khỏe con người.",
+    "Product2": "Sản phẩm còn được dùng trong nhà do các đặc tính ưu việt: không khói – không mùi – độ tro thấp – không có hóa chất – Không mùi gây hại – Mồi lửa nhanh – Thời gian duy trì cháy lâu – Nhiệt lượng cao, tỏa đều – Giá thành hợp lý.",
+    "Product3": "Sử dụng Than Gáo Dừa vừa tiết kiệm ( Độ cháy gấp 3,5 lần than thông thường), sạch sẽ, dùng được trong môi trường nhà kín, lại góp phần giúp môi trường sồn xanh hơn.",
+    "Product4Bold": "Các sản phẩm của chúng tôi đã được đăng ký sở hữu nhãn hiệu :” “Tche Tchello” ”Dahab” ”Coco Zero” ”Coco Sha” ”Highland cool”",
+    "Structure": "CƠ CẤU HOẠT ĐỘNG",
+    "Structure1": "Nhà máy sản xuất than gáo dừa của chúng tôi tọa lạc tại ấp Thuận hòa- Xã Thuận lợi- Huyện Đồng phú - Tỉnh Bình phước chính thức vận hành sản xuất vào tháng 04/2020.",
+    "Structure2": "Mô hình công ty TNHH hai thành viên, Chủ tịch hội đồng thành viên nắm vai trò quyết định.",
+    "Structure3": "Ban lãnh đạo gồm 02 thành viên, 06 thành viên quản lý cấp trung, còn lại là nhân sự lao động trực tiếp."
+  },
+
   "Footer": {
     "Title": "CÔNG TY TNHH XUẤT NHẬP KHẨU CAO NGUYÊN BÌNH PHƯỚC",
     "Address": "ĐỊA CHỈ",
     "Contact": "LIÊN HỆ",
     "Recruitment": "TUYỂN DỤNG",
     "News": "TIN TỨC",
-    "Connect" : "Kết Nối Với Chúng Tôi"
+    "Connect": "Kết Nối Với Chúng Tôi"
   }
 }
