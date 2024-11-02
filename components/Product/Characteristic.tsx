@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import React from "react";
 
-const WhyChooseUs = () => {
+const Characteristic = () => {
   const t = useTranslations("Home");
   const data = [
     { id: 1, title: t("SmellFree"), description: t("SmellFreeContent") },
@@ -32,10 +32,10 @@ const WhyChooseUs = () => {
   return (
     <>
       {/* mobile */}
-      <div className="px-5 md:px-10 lg:px-20 xl:px-32 w-full py-10 lg:py-20 space-y-4 text-[12px] font-mainR md:hidden">
+      <div className=" w-full py-10 lg:py-20 space-y-4 text-[12px] font-mainR md:hidden">
         <div className="bg-[#EEEEEE] rounded-[10px] w-full py-5 px-5">
-          <h2 className="text-[16px] font-mainB text-center">
-            {t("WhyChooseUs")}
+          <h2 className="text-[16px] font-mainB text-center py-5">
+            {t("Characteristic")}
           </h2>
           <div className="scrollbar-hidden overflow-scroll h-[300px]">
             <div className="py-5 px-5 space-y-5">
@@ -72,7 +72,7 @@ const WhyChooseUs = () => {
                 );
               })}
             </div>
-            <div className="w-full flex items-center justify-center">
+            <div className="w-full pt-5 flex items-center justify-center">
               <iframe
                 className="w-[80%] lg:w-[60%] h-[150px]"
                 src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
@@ -85,10 +85,10 @@ const WhyChooseUs = () => {
       </div>
 
       {/* PC */}
-      <div className="px-5 md:px-10 lg:px-20 xl:px-32 w-full py-10 lg:py-20 space-y-4 text-[12px] font-mainR hidden md:block">
+      <div className=" w-full py-10 lg:py-20 space-y-4 text-[12px] font-mainR hidden md:block">
         <div className="bg-[#EEEEEE] rounded-[10px] w-full py-5 px-5">
-          <h2 className="text-[16px] font-mainB text-center md:text-[24px] lg:text-[34px] xl:text-[40px]">
-            {t("WhyChooseUs")}
+          <h2 className="text-[16px] font-mainB text-center md:text-[24px] py-10 lg:text-[34px] xl:text-[40px]">
+            {t("Characteristic")}
           </h2>
           <div className="py-5 px-5 w-full flex">
             <div className="space-y-6 w-[50%]">
@@ -148,4 +148,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs;
+export default Characteristic;

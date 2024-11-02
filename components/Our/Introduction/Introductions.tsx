@@ -9,9 +9,9 @@ const Introductions = () => {
 
   return (
     <div>
-      <h2 className="py-2 lg:py-5 text-[14px] md:text-[24px] lg:text-[34px] xl:text-[40px] font-mainB">
+      <h1 className="py-2 lg:py-5 text-[14px] md:text-[24px] lg:text-[34px] xl:text-[40px] font-mainB">
         {t("CompanyProfile")}
-      </h2>
+      </h1>
 
       <div className="text-[12px] md:text-[16px] lg:text-[20px] xl:text-[24px] font-mainR">
         <div className="space-y-2">
@@ -55,9 +55,9 @@ const Introductions = () => {
         <p>{t("Intro15")}</p>
       </div>
 
-      <div className=" w-full space-y-5 md:space-y-0 md:flex md:space-x-5 md:items-center md:justify-center">
-        <Image src={intro2} alt="intro2" className="w-full" />
-        <Image src={intro3} alt="intro3" className="w-full" />
+      <div className=" w-full space-y-5 md:space-y-0 md:flex md:space-x-5  md:items-center md:justify-center">
+        <Image src={intro2} alt="intro2" className="w-full md:w-[50%]" />
+        <Image src={intro3} alt="intro3" className="w-full md:w-[50%]" />
       </div>
     </div>
   );

@@ -1,4 +1,17 @@
 {
+  "Link": {
+    "Our": "Chúng Tôi",
+    "Introduction": "Giới Thiệu Chung",
+    "certificate": "Chứng Chỉ Chất Lượng",
+    "Product": "Sản Phẩm",
+    "ThanVuong": "Than gáo dừa vuông",
+    "ThanQue": "Than gáo dừa que",
+    "ThanLG": "Than gáo dừa lục giác",
+    "ThanBBQ": "Than gáo dừa BBQ",
+    "ThanNL": "Than gáo dừa nguyên liệu",
+    "HatDieu": "Hạt điều rang muối",
+    "Coconut": "Dừa trái"
+  },
   "Menu": {
     "Home": "TRANG CHỦ",
     "Our": "CHÚNG TÔI",
@@ -66,7 +79,8 @@
     "Present": "CHÚNG TÔI ĐÃ CÓ MẶT TẠI 19 QUỐC GIA",
     "Pride": "Tự Hào Là Doanh Nghiệp Duy Nhất Tại Việt Nam Có Quy Mô Nhà Máy, Công Suất Và Sản Lượng</br>Tiêu Thụ Đạt Một Container Thành Phẩm/Ngày Đáp Ứng Được Các Thị Trường Khó Tính",
     "PrideMobile": "Tự Hào Là Doanh Nghiệp Duy Nhất Tại Việt Nam Có Quy Mô Nhà Máy, Công Suất Và Sản Lượng Tiêu Thụ Đạt Một Container Thành Phẩm/Ngày Đáp Ứng Được Các Thị Trường Khó Tính",
-    "News": "TIN TỨC"
+    "News": "TIN TỨC",
+    "Characteristic": "ĐẶC ĐIỂM THAN GÁO DỪA"
   },
 
   "Our": {},
@@ -110,6 +124,49 @@
     "Infrastructure9": "Thực hiện tiêu chí “ Xanh” Nhà máy sử dụng hệ thống năng lượng mặt trời để giảm nhiệt và tận dụng nguồn năng lượng tái tạo, vườn rau và cây ăn trái cũng được triển khai để có không gian cho môi trường làm việc.",
     "Material": "NGUYÊN LIỆU ĐẦU VÀO",
     "Material1": "Nguyên liệu đầu vào của nhà máy là GÁO DỪA KHÔ đã đốt yếm khí nhằm loại bỏ khói. Nguồn nguyên liệu tại chỗ dồi dào của Việt nam giúp chúng tôi duy trì sản lượng, đảm bảo tỷ lệ nội địa hóa của sản phẩm và tăng lợi thế cạnh tranh."
+  },
+
+  "Our-Cer": {
+    "Commit": "CHÚNG TÔI CAM KẾT",
+    "Commit1": "– Với khách hàng: Cung cấp, thỏa mãn các nhu cầu của khách hàng với chất lượng sản phẩm và dịch vụ tốt nhất. Là sự lựa chọn đáng tin cậy và hiệu quả cho khách hàng.",
+    "Commit2": "– Với các cổ đông: Xây dựng và thực hiện các kế hoạch kinh doanh hiệu quả, bền vững.",
+    "Commit3": "– Với nhân viên: Xây dựng và dần hoàn thiện môi trường làm việc chuyên nghiệp, tạo điều kiện để các nhân viên tạo dựng sự nghiệp cùng công ty",
+    "Commit4": "Dưới đây là một số kết quả thử nghiệm sản phẩm của công ty được thực bởi Trung Tâm Đo Lường Chất Lượng"
+  },
+
+  "Product": {
+    "ThanVuong": "Than gáo dừa vuông",
+    "ThanQue": "Than gáo dừa que",
+    "ThanLG": "Than gáo dừa lục giác",
+    "ThanBBQ": "Than gáo dừa BBQ",
+    "ThanNL": "Than gáo dừa nguyên liệu",
+    "HatDieu": "Hạt điều rang muối",
+    "Dua": "Dừa Trái"
+  },
+  "Product-Detail": {
+    "Same": "Kích thước phong phú",
+    "Same1": "Than Gáo Dừa Vuông được HIGLANDBP sản xuất với nhiều kích thước phù phợp với nhiều mục đích khác nhau của khách hàng.",
+    "Same2": "ĐẶC ĐIỂM THAN GÁO DỪA",
+    "ThanVuong": "THAN GÁO DỪA VUÔNG",
+    "ThanVuong1": "Than gáo dừa vuông được tạo ra từ nguyên liệu chính là vỏ quả dừa. Đây là sản phẩm than sạch chuyên dùng nướng BBQ, than hút shisha hoàn toàn tự nhiên, thân thiện môi trường, không gây độc hại cho người sử dụng.",
+    "ThanVuong2": "Than gáo dừa vuông của HighLandBP được sản xuất trên dây chuyền hiện đại nên có nhiều ưu điểm vượt trội so với các sản phẩm khác đang có mặt trên thị trường.",
+    "ThanVuong3": "Hiện nay, than gáo dừa được biết đến như loại than chuyên dùng nướng BBQ trong các nhà hàng, quán nướng hay sử dụng trong gia đình.",
+    "ThanQue": "THAN GÁO DỪA QUE",
+    "ThanQue1": "Than gáo dừa que được tạo ra từ nguyên liệu chính là vỏ quả dừa. Đây là sản phẩm than sạch chuyên dùng nướng BBQ, than hút shisha hoàn toàn tự nhiên, thân thiện môi trường, không gây độc hại cho người sử dụng.",
+    "ThanQue2": "Than gáo dừa que của HighLandBP được sản xuất trên dây chuyền hiện đại nên có nhiều ưu điểm vượt trội so với các sản phẩm khác đang có mặt trên thị trường.",
+    "ThanQue3": "Hiện nay, than gáo dừa được biết đến như loại than chuyên dùng nướng BBQ trong các nhà hàng, quán nướng hay sử dụng trong gia đình.",
+    "ThanLG": "THAN GÁO DỪA LỤC GIÁC",
+    "ThanLG1": "Than gáo dừa lục giác được tạo ra từ nguyên liệu chính là vỏ quả dừa. Đây là sản phẩm than sạch chuyên dùng nướng BBQ, than hút shisha hoàn toàn tự nhiên, thân thiện môi trường, không gây độc hại cho người sử dụng.",
+    "ThanLG2": "Than gáo dừa lục giác của HighLandBP được sản xuất trên dây chuyền hiện đại nên có nhiều ưu điểm vượt trội so với các sản phẩm khác đang có mặt trên thị trường.",
+    "ThanLG3": "Hiện nay, than gáo dừa được biết đến như loại than chuyên dùng nướng BBQ trong các nhà hàng, quán nướng hay sử dụng trong gia đình.",
+    "ThanBBQ": "Than gáo dừa BBQ",
+    "ThanBBQ1": "Than gáo dừa BBQ được tạo ra từ nguyên liệu chính là vỏ quả dừa. Đây là sản phẩm than sạch chuyên dùng nướng BBQ, than hút shisha hoàn toàn tự nhiên, thân thiện môi trường, không gây độc hại cho người sử dụng.",
+    "ThanBBQ2": "Than gáo dừa BBQ của HighLandBP được sản xuất trên dây chuyền hiện đại nên có nhiều ưu điểm vượt trội so với các sản phẩm khác đang có mặt trên thị trường.",
+    "ThanBBQ3": "Hiện nay, than gáo dừa được biết đến như loại than chuyên dùng nướng BBQ trong các nhà hàng, quán nướng hay sử dụng trong gia đình.",
+    "ThanNL": "THAN GÁO DỪA NGUYÊN LIỆU",
+    "ThanNL1": "Than gáo dừa nguyên liệu được tạo ra từ nguyên liệu chính là vỏ quả dừa. Đây là nguyên liệu để sản xuất các sản phẩm than sạch chuyên dùng nướng BBQ, than hút shisha hoàn toàn tự nhiên, thân thiện môi trường, không gây độc hại cho người sử dụng.",
+    "ThanNL2": "Than gáo dừa nguyên liệu của HighLandBP được sản xuất trên dây chuyền hiện đại nên có nhiều ưu điểm vượt trội so với các sản phẩm khác đang có mặt trên thị trường.",
+    "ThanNL3": "Hiện nay, than gáo dừa được biết đến như loại than chuyên dùng nướng BBQ trong các nhà hàng, quán nướng hay sử dụng trong gia đình."
   },
 
   "Footer": {

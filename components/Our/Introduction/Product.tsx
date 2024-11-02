@@ -32,7 +32,7 @@ const Product = () => {
           <Image src={product2} alt="product 2" className="w-[50%]" />
           <Image src={product3} alt="product 3" className="w-[50%]" />
         </div>
-        <Image src={product1} alt="product1" className="h-[50%] block md:hidden" />
+        <Image src={product1} alt="product1" className="h-[50%] md:hidden" />
       </div>
     </div>
   );

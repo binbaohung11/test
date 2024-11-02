@@ -1,11 +1,7 @@
-import Infrastructure from "@/components/Our/Introduction/Infrastructure";
-import Introductions from "@/components/Our/Introduction/Introductions";
-import Materials from "@/components/Our/Introduction/Materials";
-import Product from "@/components/Our/Introduction/Product";
-import Structure from "@/components/Our/Introduction/Structure";
 import PathLink from "@/components/Path/PathLink";
 import { Metadata } from "next";
 import React from "react";
+import Certificate from "@/components/Our/Certificate/Certificate";
 
 const seo = {
   title: "Introduction - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
@@ -40,31 +36,18 @@ const seo = {
 };
 
 export const metadata: Metadata = { ...seo };
-
-const Introduction = () => {
+const page = () => {
   return (
     <>
       <div className="py-5 px-3 md:px-10 lg:px-20 xl:px-40 lg:py-20">
         <PathLink />
 
         <div>
-          <Introductions />
-        </div>
-        <div>
-          <Product />
-        </div>
-        <div>
-          <Structure />
-        </div>
-        <div>
-          <Infrastructure />
-        </div>
-        <div>
-          <Materials />
+          <Certificate />
         </div>
       </div>
     </>
   );
 };
 
-export default Introduction;
+export default page;

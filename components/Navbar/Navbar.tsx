@@ -4,26 +4,29 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion"; // Import AnimatePresence and motion
 import logo from "../../assets/image/home/image_logo.png";
 import Menu from "./Menu";
 
 const Navbar = ({ locale }: { locale: string }) => {
   const t = useTranslations("Menu");
+  const tProduct = useTranslations("Product");
   const pathname = usePathname();
+  const [showProducts, setShowProducts] = useState(false);
 
   return (
     <div className="w-full sticky top-0 z-50 bg-white">
-      <div className=" py-5 px-[10rem] max-sm:px-[3rem] max-md:px-[3rem] max-lg:px-[3rem] max-xl:px-[5rem] max-2xl:px-[7rem] max-xl:py-4 max-2xl:py-5 ">
+      <div className="py-5 px-[10rem] max-sm:px-[3rem] max-md:px-[3rem] max-lg:px-[3rem] max-xl:px-[5rem] max-2xl:px-[7rem] max-xl:py-4 max-2xl:py-5">
         <div className="w-full flex max-md:hidden">
-          <div className="w-[10%] flex items-center justify-center ">
+          <div className="w-[10%] flex items-center justify-center">
             <Image
               src={logo}
               alt="logo"
               className="w-[115px] max-sm:w-[36px] max-md:w-[40px] max-lg:w-[50px] max-xl:w-[60px] max-2xl:w-[60px]"
             />
           </div>
-          <div className=" w-[90%] flex items-center justify-center space-x-16 text-[20px] font-mainB max-md:text-[12px] max-lg:text-[12px] max-xl:text-[14px] max-2xl:text-[16px] max-md:space-x-5 max-lg:space-x-5 max-xl:space-x-8 max-2xl:space-x-14">
+          <div className="w-[90%] flex items-center justify-center space-x-16 text-[20px] font-mainB max-md:text-[12px] max-lg:text-[12px] max-xl:text-[14px] max-2xl:text-[16px] max-md:space-x-5 max-lg:space-x-5 max-xl:space-x-8 max-2xl:space-x-14">
             <button
               className={`hover:text-[#639F7A] ${
                 pathname === `/${locale}` ? "border-b-[2.5px] border-black" : ""
@@ -33,52 +36,76 @@ const Navbar = ({ locale }: { locale: string }) => {
             </button>
             <button
               className={`hover:text-[#639F7A] ${
-                pathname === `/${locale}/our`
+                pathname.startsWith(`/${locale}/our`)
                   ? "border-b-[2.5px] border-black"
                   : ""
               }`}
             >
-              <Link href={`/${locale}/our`}>{t("Our")}</Link>
+              <Link href={`/${locale}/our/introduction`}>{t("Our")}</Link>
             </button>
-            {/* Lặp lại cho các mục menu khác */}
+
+            {/* Product button with dropdown */}
             <button
               className={`hover:text-[#639F7A] relative ${
                 pathname === `/${locale}/product`
                   ? "border-b-[2.5px] border-black"
                   : ""
               }`}
+              onMouseEnter={() => setShowProducts(true)}
+              onMouseLeave={() => setShowProducts(false)}
             >
-              <Link href={`/${locale}/product`}>{t("Product")}</Link>
-              {/* <AnimatePresence>
+              <p >{t("Product")}</p>
+              <AnimatePresence>
                 {showProducts && (
                   <motion.div
-                    className="absolute w-[200px] bg-white shadow-md rounded-md p-4 z-50 pl-10 max-lg:pl-4 max-xl:pl-6 max-lg:w-[100px] max-xl:w-[140px] max-2xl:w-[160px] "
+                    className="absolute w-[300px] bg-white shadow-md rounded-md p-4 z-50 pl-10 max-lg:pl-4 max-xl:pl-6 max-lg:w-[100px] max-xl:w-[140px] max-2xl:w-[160px]"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex flex-col font-mainR text-[#E1E1E1] text-[18px] space-y-3 max-md:text-[12px] max-lg:text-[12px] max-xl:text-[14px] max-2xl:text-[16px]">
-                      <button className=" text-left hover:text-black">
-                        <Link to={`/${currentLanguage}/product/1`}>
-                          Sản phẩm 1
+                      <button className="text-left hover:text-black">
+                        <Link href={`/${locale}/product/coconut-charcoal-cube`}>
+                          {tProduct("ThanVuong")}
                         </Link>
                       </button>
                       <button className="text-left hover:text-black">
-                        <Link to={`/${currentLanguage}/product/2`}>
-                          Sản phẩm 2
+                        <Link href={`/${locale}/product/coconut-charcoal-stick`}>
+                          {tProduct("ThanQue")}
                         </Link>
                       </button>
                       <button className="text-left hover:text-black">
-                        <Link to={`/${currentLanguage}/product/5`}>
-                          Sản phẩm 5
+                        <Link href={`/${locale}/product/coconut-charcoal-hexagonal`}>
+                          {tProduct("ThanLG")}
+                        </Link>
+                      </button>
+                      <button className="text-left hover:text-black">
+                        <Link href={`/${locale}/product/coconut-charcoal-bbq`}>
+                          {tProduct("ThanBBQ")}
+                        </Link>
+                      </button>
+                      <button className="text-left hover:text-black">
+                        <Link href={`/${locale}/product/coconut-charcoal-material`}>
+                          {tProduct("ThanNL")}
+                        </Link>
+                      </button>
+                      <button className="text-left hover:text-black">
+                        <Link href={`/${locale}/product/roasted-cashew-nuts`}>
+                          {tProduct("HatDieu")}
+                        </Link>
+                      </button>
+                      <button className="text-left hover:text-black">
+                        <Link href={`/${locale}/product/coconut`}>
+                          {tProduct("Dua")}
                         </Link>
                       </button>
                     </div>
                   </motion.div>
                 )}
-              </AnimatePresence> */}
+              </AnimatePresence>
             </button>
+
             <button
               className={`hover:text-[#639F7A] ${
                 pathname === `/${locale}/library`
@@ -117,15 +144,3 @@ const Navbar = ({ locale }: { locale: string }) => {
 };
 
 export default Navbar;
-
-{
-  /* <div className="w-full flex justify-between border-b py-4">
-      <div className="flex gap-4 items-center text-lg">
-        <Link href={`/${locale}`}>{t("Home")}</Link>
-      </div>
-      <select value={locale} onChange={handleLanguageChange}>
-        <option value="en">EN</option>
-        <option value="fr">FR</option>
-      </select>
-    </div> */
-}
