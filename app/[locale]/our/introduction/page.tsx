@@ -6,8 +6,9 @@ import Structure from "@/components/Our/Introduction/Structure";
 import PathLink from "@/components/Path/PathLink";
 import { Metadata } from "next";
 import React from "react";
+import image from '../../../../assets/image/our/introduction/infras-image-1.jpg'
 
-export const metadata: Metadata = {
+const seo = {
   title: "Introduction - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
   description:
     "Highland Bp., Ltd was established on February 27, 2019, Business registration certificate number: 3801195652 Binh Phuoc Department of Planning and Investment.",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://highlandbp.com.vn/wp-content/uploads/2020/07/than-gao-dua-vuong.jpg",
+        url: image.src,
         width: 810,
         height: 463,
         alt: "Introduction",
@@ -38,6 +39,8 @@ export const metadata: Metadata = {
       "https://highlandbp.com.vn/wp-content/uploads/2020/07/than-gao-dua-vuong.jpg",
   },
 };
+
+export const metadata: Metadata = { ...seo };
 
 const Introduction = () => {
   return (
