@@ -1,10 +1,11 @@
 "use client";
 import { getProductData } from "@/lib/data";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 import React from "react";
 import empty from "../../assets/image/product/empty-image-1.png";
+import { Metadata } from "next";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -13,6 +14,13 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Characteristic from "./Characteristic";
 
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Static Test Title",
+    description: "Static test description.",
+  };
+}
+
 const Product = () => {
   const { product } = useParams(); // Lấy giá trị product từ URL
   const t = useTranslations("Product-Detail"); // Sử dụng hook useTranslations
@@ -20,14 +28,6 @@ const Product = () => {
   const productData = getProductData(t); // Lấy dữ liệu sản phẩm với tiêu đề đã dịch
 
   const currentProduct = productData.find((item) => item.link === product);
-
-  const data = [
-    { image: empty, title: "Dừa Trái" },
-    { image: empty, title: "Hạt Điều" },
-    { image: empty, title: "Trái cam" },
-    { image: empty, title: "Trái bưởi" },
-    { image: empty, title: "Trái quýt" },
-  ];
 
   return (
     <div className="py-5">

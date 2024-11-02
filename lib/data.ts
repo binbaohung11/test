@@ -10,7 +10,9 @@ import stick1x3 from "../assets/image/product/stick/STICK-1.8X3.5.jpg";
 import stick from "../assets/image/product/stick/stick.jpg";
 
 // data.ts
-export const getProductData = (t: any) => [
+type TranslationFunction = (key: string) => string;
+
+export const getProductData = (t: TranslationFunction) => [
   {
     link: "coconut-charcoal-cube",
     title: t("ThanVuong"),
