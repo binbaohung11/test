@@ -62,7 +62,7 @@ const Footer = () => {
               className="w-[43px] md:w-[60px] lg:w-[80px] xl:w-[120px]"
             />
           </div>
-          <div className="w-[60%] text-[14px] md:text-[20px] lg:text-[28px] xl:text-[34px] font-mainB">
+          <div className="w-[60%] text-[14px] md:text-[20px] lg:text-[28px] xl:text-[34px] font-mainB lg:w-[50%] ">
             {t("Title")}
           </div>
         </div>
@@ -75,7 +75,7 @@ const Footer = () => {
               Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước
             </p>
           </div>
-          <div className="w-[50%]"> 
+          <div className="w-[50%]">
             <p className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB">
               {t("Contact")}
             </p>
@@ -107,9 +107,21 @@ const Footer = () => {
               {t("Connect")}
             </div>
             <div className="flex space-x-3">
-              <Image src={fb} alt="fb" className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]" />
-              <Image src={zalo} alt="zalo" className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]" />
-              <Image src={p} alt="p" className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]" />
+              <Image
+                src={fb}
+                alt="fb"
+                className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
+              />
+              <Image
+                src={zalo}
+                alt="zalo"
+                className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
+              />
+              <Image
+                src={p}
+                alt="p"
+                className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
+              />
             </div>
           </div>
         </div>

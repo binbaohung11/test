@@ -57,7 +57,7 @@ const WhyChooseUs = () => {
             </div>
             <div className="w-full flex items-center justify-center">
               <iframe
-                className="w-[80%]"
+                className="w-[80%] lg:w-[60%] h-[600px]"
                 src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
