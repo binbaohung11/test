@@ -65,7 +65,23 @@ const PathLink = () => {
         <span className="text-black"> {t("ThanNL")}</span>
       </div>
     ),
-    "[locale]/product/roasted-cashew-nuts": (
+    "[locale]/product/charcoal-nacre": (
+      <div className="text-[10px] md:text-[16px] lg:text-[20px] xl:text-[24px]">
+        <span className="text-[#969696]">
+          {t("Product")} {">"}
+        </span>
+        <span className="text-black"> {t("ThanXC")}</span>
+      </div>
+    ),
+    "[locale]/product/charcoal-cafe": (
+      <div className="text-[10px] md:text-[16px] lg:text-[20px] xl:text-[24px]">
+        <span className="text-[#969696]">
+          {t("Product")} {">"}
+        </span>
+        <span className="text-black"> {t("ThanCF")}</span>
+      </div>
+    ),
+    "[locale]/product/cashew": (
       <div className="text-[10px] md:text-[16px] lg:text-[20px] xl:text-[24px]">
         <span className="text-[#969696]">
           {t("Product")} {">"}

@@ -1,24 +1,63 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import React from "react";
-import emptyImage from "../../assets/image/home/empty-image.png";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import cube from "../../assets/image/product/cube/cube-image-1.jpg";
+import stick from "../../assets/image/product/stick/STICK-1.8X3.5.jpg";
+import bbq from "../../assets/image/product/bbq/coconut-charcoal-bbq-4x10.jpg";
+import hexa from "../../assets/image/product/hexogon/HEXAGON-2X4.jpg";
+import material from "../../assets/image/product/Material/coconut-shell-charcoal-1-1536x1152.jpg";
+import cf from "../../assets/image/product/other/THAN-CAFE.jpg";
+import xc from "../../assets/image/product/other/THAN-XA-CU.jpg";
 
 // Import Swiper styles
 import "swiper/css";
+import Link from "next/link";
 
 const CoalProduct = () => {
   const t = useTranslations("Home");
+  const tProduct = useTranslations("Product");
+  const locale = useLocale(); // Get the current locale
 
   const data = [
-    { image: emptyImage, title: "Than Gáo Dừa Vuông1" },
-    { image: emptyImage, title: "Than Gáo Dừa Vuông2" },
-    { image: emptyImage, title: "Than Gáo Dừa Vuông3" },
-    { image: emptyImage, title: "Than Gáo Dừa Vuông4" },
-    { image: emptyImage, title: "Than Gáo Dừa Vuông5" },
+    {
+      image: cube,
+      title: tProduct("ThanVuong"),
+      url: `${locale}/product/coconut-charcoal-cube`,
+    },
+    {
+      image: stick,
+      title: tProduct("ThanQue"),
+      url: `${locale}/product/coconut-charcoal-stick`,
+    },
+    {
+      image: hexa,
+      title: tProduct("ThanLG"),
+      url: `${locale}/product/coconut-charcoal-hexagonal`,
+    },
+    {
+      image: material,
+      title: tProduct("ThanNL"),
+      url: `${locale}/product/coconut-charcoal-bbq`,
+    },
+    {
+      image: bbq,
+      title: tProduct("ThanBBQ"),
+      url: `${locale}/product/coconut-charcoal-material`,
+    },
+    {
+      image: cf,
+      title: tProduct("ThanCF"),
+      url: `${locale}/product/charcoal-nacre`,
+    },
+    {
+      image: xc,
+      title: tProduct("ThanXC"),
+      url: `${locale}/product/charcoal-cafe`,
+    },
   ];
 
   return (
@@ -40,10 +79,18 @@ const CoalProduct = () => {
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
-              <Image src={item.image} alt={item.title} className="" />
-              <h3 className="text-[13px] font-mainB text-center py-1">
-                {item.title}
-              </h3>
+              <Link href={item.url}>
+                <div className="hover:text-[#969696]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="hover:shadow-2xl"
+                  />
+                  <h3 className="text-[13px] font-mainB text-center py-1">
+                    {item.title}
+                  </h3>
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -62,8 +109,18 @@ const CoalProduct = () => {
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
-              <Image src={item.image} alt={item.title} />
-              <h3 className="text-[14px] font-mainB text-center md:text-[18px] lg:text-[20px] xl:text-[22px]  py-3">{item.title}</h3>
+              <Link href={item.url || ""}>
+                <div className="hover:text-[#969696]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="hover:shadow-2xl"
+                  />
+                  <h3 className="text-[14px] font-mainB text-center md:text-[18px] lg:text-[20px] xl:text-[22px]  py-3">
+                    {item.title}
+                  </h3>
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -81,8 +138,18 @@ const CoalProduct = () => {
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
-              <Image src={item.image} alt={item.title} />
-              <h3 className="text-[12px] font-mainB text-center md:text-[18px] lg:text-[20px] xl:text-[22px]  py-3">{item.title}</h3>
+              <Link href={item.url || ""}>
+                <div className="hover:text-[#969696]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="hover:shadow-2xl"
+                  />
+                  <h3 className="text-[12px] font-mainB text-center md:text-[18px] lg:text-[20px] xl:text-[22px]  py-3">
+                    {item.title}
+                  </h3>
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

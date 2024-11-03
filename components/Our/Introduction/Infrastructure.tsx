@@ -63,7 +63,7 @@ const Infrastructure = () => {
                 <Image
                   src={item.image}
                   alt={item.title}
-                  className="shadow-lg w-full h-48 object-cover rounded-[10px]"
+                  className="shadow-lg w-full h-[250px] object-cover rounded-[10px]"
                 />
               </SwiperSlide>
             ))}
@@ -86,7 +86,7 @@ const Infrastructure = () => {
                 <Image
                   src={item.image}
                   alt={item.title}
-                  className="shadow-lg w-full h-72 object-cover rounded-[10px]"
+                  className="shadow-lg w-full h-[250px] xl:h-[400px] object-cover rounded-[10px]"
                 />
               </SwiperSlide>
             ))}

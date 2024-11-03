@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion"; // Import AnimatePresence and motion
-import logo from "../../assets/image/home/image_logo.png";
+import logo from "../../assets/icons_navbar/highlandbp-logo-iso.png";
 import Menu from "./Menu";
 
 const Navbar = ({ locale }: { locale: string }) => {
@@ -19,12 +19,8 @@ const Navbar = ({ locale }: { locale: string }) => {
     <div className="w-full sticky top-0 z-50 bg-white">
       <div className="py-5 px-[10rem] max-sm:px-[3rem] max-md:px-[3rem] max-lg:px-[3rem] max-xl:px-[5rem] max-2xl:px-[7rem] max-xl:py-4 max-2xl:py-5">
         <div className="w-full flex max-md:hidden">
-          <div className="w-[10%] flex items-center justify-center">
-            <Image
-              src={logo}
-              alt="logo"
-              className="w-[115px] max-sm:w-[36px] max-md:w-[40px] max-lg:w-[50px] max-xl:w-[60px] max-2xl:w-[60px]"
-            />
+          <div className="w-[15%] lg:w-[20%] flex items-center justify-center">
+            <Image src={logo} alt="logo" className="w-[150px] lg:w-[200px]  " />
           </div>
           <div className="w-[90%] flex items-center justify-center space-x-16 text-[20px] font-mainB max-md:text-[12px] max-lg:text-[12px] max-xl:text-[14px] max-2xl:text-[16px] max-md:space-x-5 max-lg:space-x-5 max-xl:space-x-8 max-2xl:space-x-14">
             <button
@@ -47,14 +43,14 @@ const Navbar = ({ locale }: { locale: string }) => {
             {/* Product button with dropdown */}
             <button
               className={`hover:text-[#639F7A] relative ${
-                pathname === `/${locale}/product`
+                pathname.startsWith(`/${locale}/product`)
                   ? "border-b-[2.5px] border-black"
                   : ""
               }`}
               onMouseEnter={() => setShowProducts(true)}
               onMouseLeave={() => setShowProducts(false)}
             >
-              <p >{t("Product")}</p>
+              <p>{t("Product")}</p>
               <AnimatePresence>
                 {showProducts && (
                   <motion.div
@@ -71,12 +67,16 @@ const Navbar = ({ locale }: { locale: string }) => {
                         </Link>
                       </button>
                       <button className="text-left hover:text-black">
-                        <Link href={`/${locale}/product/coconut-charcoal-stick`}>
+                        <Link
+                          href={`/${locale}/product/coconut-charcoal-stick`}
+                        >
                           {tProduct("ThanQue")}
                         </Link>
                       </button>
                       <button className="text-left hover:text-black">
-                        <Link href={`/${locale}/product/coconut-charcoal-hexagonal`}>
+                        <Link
+                          href={`/${locale}/product/coconut-charcoal-hexagonal`}
+                        >
                           {tProduct("ThanLG")}
                         </Link>
                       </button>
@@ -86,12 +86,28 @@ const Navbar = ({ locale }: { locale: string }) => {
                         </Link>
                       </button>
                       <button className="text-left hover:text-black">
-                        <Link href={`/${locale}/product/coconut-charcoal-material`}>
+                        <Link
+                          href={`/${locale}/product/coconut-charcoal-material`}
+                        >
                           {tProduct("ThanNL")}
                         </Link>
                       </button>
                       <button className="text-left hover:text-black">
-                        <Link href={`/${locale}/product/roasted-cashew-nuts`}>
+                        <Link
+                          href={`/${locale}/product/charcoal-nacre`}
+                        >
+                          {tProduct("ThanXC")}
+                        </Link>
+                      </button>
+                      <button className="text-left hover:text-black">
+                        <Link
+                          href={`/${locale}/product/charcoal-cafe`}
+                        >
+                          {tProduct("ThanCF")}
+                        </Link>
+                      </button>
+                      <button className="text-left hover:text-black">
+                        <Link href={`/${locale}/product/cashew`}>
                           {tProduct("HatDieu")}
                         </Link>
                       </button>
@@ -137,7 +153,7 @@ const Navbar = ({ locale }: { locale: string }) => {
         </div>
 
         {/* Mobile */}
-        <Menu />
+        <Menu locale={locale} />
       </div>
     </div>
   );

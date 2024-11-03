@@ -4,8 +4,6 @@ import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import React from "react";
-import empty from "../../assets/image/product/empty-image-1.png";
-import { Metadata } from "next";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -13,13 +11,6 @@ import { Autoplay } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import Characteristic from "./Characteristic";
-
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: "Static Test Title",
-    description: "Static test description.",
-  };
-}
 
 const Product = () => {
   const { product } = useParams(); // Lấy giá trị product từ URL
@@ -29,10 +20,19 @@ const Product = () => {
 
   const currentProduct = productData.find((item) => item.link === product);
 
+  if (!currentProduct) {
+    return <div>hello</div>;
+  }
+
   return (
     <div className="py-5">
       <div className="flex justify-center items-center md:hidden">
-        <Image src={empty} alt="empty" className="w-[170px]" />
+        <Image
+          src={currentProduct?.linkImage || ""}
+          alt={currentProduct?.title || ""}
+          width={200}
+          height={200}
+        />
       </div>
 
       <div className="w-full flex items-center space-x-5">
@@ -49,7 +49,14 @@ const Product = () => {
           </div>
         </div>
         <div className="w-[30%] hidden md:block">
-          <Image src={empty} alt="empty" className="" />
+          <div className="flex w-full justify-center">
+            <Image
+              src={currentProduct?.linkImage || ""}
+              alt={currentProduct?.title || ""}
+              width={370}
+              height={370}
+            />
+          </div>
         </div>
       </div>
       <div className="text-[12px] md:text-[16px] lg:text-[20px] xl:text-[24px] font-mainR">

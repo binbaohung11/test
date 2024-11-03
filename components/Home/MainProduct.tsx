@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 import React from "react";
-import emptyImage from "../../assets/image/home/empty-image.png";
+import emptyImage from "../../assets/image/our/introduction/intro-image-1.png";
 import Image from "next/image";
-import vuongImage from "../../assets/image/home/vuong-image.png";
+import vuongImage from "../../assets/image/our/introduction/intro-image-2.png";
 
 const MainProduct = () => {
   const t = useTranslations("Home");
@@ -57,12 +57,7 @@ const MainProduct = () => {
             <Image
               src={vuongImage}
               alt="vuong image"
-              className="w-[200px] lg:w-[250px]  xl:w-[325px] rounded-[10px]"
-            />
-            <Image
-              src={vuongImage}
-              alt="vuong image"
-              className="w-[200px] lg:w-[250px]  xl:w-[325px] rounded-[10px]"
+              className="w-[200px] md:w-[333px] lg:w-[444px] xl:w-[500px] rounded-[10px]"
             />
           </div>
         </div>

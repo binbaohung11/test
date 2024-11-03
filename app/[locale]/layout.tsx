@@ -5,37 +5,60 @@ import { getMessages } from "next-intl/server";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { Metadata } from "next";
+import { DOMAIN_NAME, IMAGE_HOME_SEO } from "@/lib/helpFunc";
 
-export const metadata: Metadata = {
-  title: "Home - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
-  description:
-    "Sản phẩm của công ty chúng tôi không chỉ chất lượng cao mà còn được đóng gói đẹp và bắt mắt.",
-  openGraph: {
-    title: "Home - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  // Kiểm tra `params.locale` để xác định canonical URL
+  const baseUrl = DOMAIN_NAME;
+  const canonicalUrl =
+    params.locale === "vn"
+      ? `${baseUrl}/vn`
+      : params.locale === "en"
+      ? `${baseUrl}/en`
+      : baseUrl;
+
+  return {
+    title: "Trang Chủ - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
     description:
       "Sản phẩm của công ty chúng tôi không chỉ chất lượng cao mà còn được đóng gói đẹp và bắt mắt.",
-    url: "https://highlandbp.com.vn",
-    type: "website",
-    locale: "vi_VN",
-    images: [
-      {
-        url: "https://highlandbp.com.vn/wp-content/uploads/2020/07/than-gao-dua-vuong.jpg",
-        width: 810,
-        height: 463,
-        alt: "Home",
-        type: "image/jpeg",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Home - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
-    description:
-      "Sản phẩm của công ty chúng tôi không chỉ chất lượng cao mà còn được đóng gói đẹp và bắt mắt.",
-    images:
-      "https://highlandbp.com.vn/wp-content/uploads/2020/07/than-gao-dua-vuong.jpg",
-  },
-};
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    robots: {
+      index: true, // Cho phép lập chỉ mục
+      follow: true, // Cho phép bot theo các liên kết trên trang
+      nocache: false, // Không chặn lưu cache của công cụ tìm kiếm
+    },
+    openGraph: {
+      title: "Trang Chủ - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+      description:
+        "Sản phẩm của công ty chúng tôi không chỉ chất lượng cao mà còn được đóng gói đẹp và bắt mắt.",
+      url: canonicalUrl,
+      type: "website",
+
+      images: [
+        {
+          url: IMAGE_HOME_SEO,
+          width: 810,
+          height: 463,
+          alt: "Trang Chủ",
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Trang Chủ - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+      description:
+        "Sản phẩm của công ty chúng tôi không chỉ chất lượng cao mà còn được đóng gói đẹp và bắt mắt.",
+      images: IMAGE_HOME_SEO,
+    },
+  };
+}
 
 export default async function RootLayout({
   children,

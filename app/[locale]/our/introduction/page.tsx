@@ -4,42 +4,61 @@ import Materials from "@/components/Our/Introduction/Materials";
 import Product from "@/components/Our/Introduction/Product";
 import Structure from "@/components/Our/Introduction/Structure";
 import PathLink from "@/components/Path/PathLink";
+import { DOMAIN_NAME, IMAGE_INTRO_SEO } from "@/lib/helpFunc";
 import { Metadata } from "next";
 import React from "react";
 
-const seo = {
-  title: "Introduction - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
-  description:
-    "Highland Bp., Ltd was established on February 27, 2019, Business registration certificate number: 3801195652 Binh Phuoc Department of Planning and Investment.",
-  openGraph: {
-    title: "Introduction - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
-    description:
-      "Highland Bp., Ltd was established on February 27, 2019, Business registration certificate number: 3801195652 Binh Phuoc Department of Planning and Investment.",
-    url: "https://highlandbp.com.vn/introduction",
-    type: "article",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://highlandbp.com.vn/wp-content/uploads/2020/07/than-gao-dua-vuong.jpg",
-        width: 810,
-        height: 463,
-        alt: "Introduction",
-        type: "image/jpeg",
-      },
-    ],
-    publishedTime: "2020-07-16T19:54:36+07:00",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Introduction - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
-    description:
-      "Highland Bp., Ltd was established on February 27, 2019, Business registration certificate number: 3801195652 Binh Phuoc Department of Planning and Investment.",
-    images:
-      "https://highlandbp.com.vn/wp-content/uploads/2020/07/than-gao-dua-vuong.jpg",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  // Kiểm tra `params.locale` để xác định canonical URL
+  const baseUrl = DOMAIN_NAME;
+  const canonicalUrl =
+    params.locale === "vn"
+      ? `${baseUrl}/vn/our/introduction`
+      : params.locale === "en"
+      ? `${baseUrl}/en/our/introduction`
+      : baseUrl;
 
-export const metadata: Metadata = { ...seo };
+  return {
+    title: "Giới Thiệu - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+    description:
+      "Công ty TNHH XNK Cao Nguyên Bình phước được thành lập ngày 27/02/2019, Giấy đăng ký kinh doanh số: 3801195652 Sở kế hoạch và đầu tư Bình phước cấp. Vốn điều lệ 10,5 tỷ đồng.",
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    robots: {
+      index: true, // Cho phép lập chỉ mục
+      follow: true, // Cho phép bot theo các liên kết trên trang
+      nocache: false, // Không chặn lưu cache của công cụ tìm kiếm
+    },
+    openGraph: {
+      title: "Giới Thiệu - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+      description:
+        "Công ty TNHH XNK Cao Nguyên Bình phước được thành lập ngày 27/02/2019, Giấy đăng ký kinh doanh số: 3801195652 Sở kế hoạch và đầu tư Bình phước cấp. Vốn điều lệ 10,5 tỷ đồng.",
+      url: canonicalUrl,
+      type: "website",
+      images: [
+        {
+          url: IMAGE_INTRO_SEO,
+          width: 810,
+          height: 463,
+          alt: "Giới Thiệu",
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Giới Thiệu - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+      description:
+        "Công ty TNHH XNK Cao Nguyên Bình phước được thành lập ngày 27/02/2019, Giấy đăng ký kinh doanh số: 3801195652 Sở kế hoạch và đầu tư Bình phước cấp. Vốn điều lệ 10,5 tỷ đồng.",
+      images: IMAGE_INTRO_SEO,
+    },
+  };
+}
 
 const Introduction = () => {
   return (

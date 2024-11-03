@@ -20,7 +20,7 @@ export default function Welcome() {
           {t("Content")}
         </p>
         <div className="text-left mt-2 lg:mt-5">
-          <button className="text-[11px] md:text-[16px] lg:text-[18px] xl:text-[20px] px-3 py-1.5 font-mainB border border-[#969696] rounded-full">
+          <button className="text-[11px] md:text-[16px] lg:text-[18px] xl:text-[20px] px-3 py-1.5 font-mainB border border-[#969696] rounded-full hover:bg-[#E1E1E1]">
             {t("SeeMore")}
           </button>
         </div>
