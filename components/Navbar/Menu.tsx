@@ -23,6 +23,8 @@ const Menu = ({ locale }: { locale: string }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  console.log(isMenuOpen);
+
   const toggleSubmenuOur = () => {
     setIsSubmenuOurOpen(!isSubmenuOurOpen);
   };
@@ -57,19 +59,19 @@ const Menu = ({ locale }: { locale: string }) => {
   return (
     <div className="hidden max-md:block relative w-full">
       {/* Menu Icon */}
-      <div className="absolute top-1.5 -left-6">
+      <div className="absolute top-1 -left-10 ">
         <Image
           src={icon_menu}
           alt="icon_menu"
           onClick={toggleMenu}
-          className="cursor-pointer"
+          className="cursor-pointer w-[30px]"
         />
       </div>
 
       {/* Centered Logo and Input */}
       <div className="w-full flex items-center justify-between">
         <div className="w-[35%]">
-          <Image src={logo} alt="logo" className="" />
+          <Image src={logo} alt="logo" className="w-[100px]" />
         </div>
         <div className="w-[65%] text-right">
           <input
@@ -221,9 +223,16 @@ const Menu = ({ locale }: { locale: string }) => {
                 </div>
               )}
             </li>
-            <li className="py-2 cursor-pointer px-6">{t("News")}</li>
-            <li className="py-2 cursor-pointer px-6">{t("Recruitment")}</li>
-            <li className="py-2 cursor-pointer px-6">{t("Contact")}</li>
+
+            <li className="py-2 cursor-pointer px-6">
+              <Link href={`/${locale}/news`}>{t("News")}</Link>
+            </li>
+            <li className="py-2 cursor-pointer px-6">
+              <Link href={`/${locale}/recruitment`}>{t("Recruitment")}</Link>
+            </li>
+            <li className="py-2 cursor-pointer px-6">
+              <Link href={`/${locale}/contact`}>{t("Contact")}</Link>
+            </li>
           </ul>
         </div>
       )}

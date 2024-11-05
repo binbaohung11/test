@@ -6,7 +6,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import fb from "../../assets/image/footer/fb-icon.png";
 import zalo from "../../assets/image/footer/zalo-icon.png";
-import p from "../../assets/image/footer/p-icon.png";
+import p from "../../assets/image/contact/snap-image.png";
+import { fb_help, mail_help, map_help, phone_help, snap_help, zalo_help } from "@/lib/helpFunc";
 
 const Footer = () => {
   const t = useTranslations("Footer");
@@ -23,17 +24,28 @@ const Footer = () => {
         </div>
         <div>
           <p className="text-[14px] font-mainB">{t("Address")}</p>
-          <p>Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước</p>
+          <a
+            href={map_help}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước
+          </a>
         </div>
         <div>
           <p className="text-[14px] font-mainB">{t("Contact")}</p>
           <div className="flex items-center space-x-2">
             <Image src={phone} alt="phone" className="w-[12px]" />
-            <a>+84 915 430 543</a>
+            <a href={phone_help} className="hover:underline">
+              +84 915 430 543
+            </a>
           </div>
           <div className="flex items-center space-x-2">
             <Image src={mail} alt="mail" className="w-[12px]" />
-            <a>CAONGUYENBP.COCO@GMAIL.COM</a>
+            <a href={mail_help} className="hover:underline">
+              CAONGUYENBP.COCO@GMAIL.COM
+            </a>
           </div>
         </div>
         <div className="flex ">
@@ -44,9 +56,15 @@ const Footer = () => {
           <div className="w-[50%] space-y-2">
             <div className="text-[14px] font-mainB">{t("Connect")}</div>
             <div className="flex space-x-3">
-              <Image src={fb} alt="fb" className="w-[25px]" />
-              <Image src={zalo} alt="zalo" className="w-[25px]" />
-              <Image src={p} alt="p" className="w-[25px]" />
+              <a href={fb_help} target="_blank" rel="noopener noreferrer">
+                <Image src={fb} alt="Facebook" className="w-[25px]" />
+              </a>
+              <a href={zalo_help} target="_blank" rel="noopener noreferrer">
+                <Image src={zalo} alt="Zalo" className="w-[25px]" />
+              </a>
+              <a href={snap_help} target="_blank" rel="noopener noreferrer">
+                <Image src={p} alt="Printer" className="w-[25px]" />
+              </a>
             </div>
           </div>
         </div>
@@ -68,12 +86,17 @@ const Footer = () => {
         </div>
         <div className="flex w-full">
           <div className="w-[50%]">
-            <p className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px]  font-mainB">
+            <p className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB">
               {t("Address")}
             </p>
-            <p className="text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px]">
+            <a
+              href={map_help}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px] hover:underline"
+            >
               Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước
-            </p>
+            </a>
           </div>
           <div className="w-[50%]">
             <p className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB">
@@ -81,13 +104,19 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-2">
               <Image src={phone} alt="phone" className="w-[12px]" />
-              <a className="text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px]">
+              <a
+                href={phone_help}
+                className="text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px] hover:underline"
+              >
                 +84 915 430 543
               </a>
             </div>
             <div className="flex items-center space-x-2">
-              <Image src={mail} alt="mail" className="w-[12px] " />
-              <a className="text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px]">
+              <Image src={mail} alt="mail" className="w-[12px]" />
+              <a
+                href={mail_help}
+                className="text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px] hover:underline"
+              >
                 CAONGUYENBP.COCO@GMAIL.COM
               </a>
             </div>
@@ -107,21 +136,27 @@ const Footer = () => {
               {t("Connect")}
             </div>
             <div className="flex space-x-3">
-              <Image
-                src={fb}
-                alt="fb"
-                className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
-              />
-              <Image
-                src={zalo}
-                alt="zalo"
-                className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
-              />
-              <Image
-                src={p}
-                alt="p"
-                className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
-              />
+              <a href={fb_help} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={fb}
+                  alt="Facebook"
+                  className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
+                />
+              </a>
+              <a href={zalo_help} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={zalo}
+                  alt="Zalo"
+                  className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
+                />
+              </a>
+              <a href={snap_help} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={p}
+                  alt="Printer"
+                  className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
+                />
+              </a>
             </div>
           </div>
         </div>

@@ -64,7 +64,7 @@ const Present = () => {
         <div className="md:hidden">
           <Swiper
             spaceBetween={10}
-            slidesPerView={3}
+            slidesPerView={2}
             loop={true}
             modules={[Autoplay]} // Thêm modules vào đây
             autoplay={{

@@ -138,6 +138,8 @@
     "Commit4": "Dưới đây là một số kết quả thử nghiệm sản phẩm của công ty được thực bởi Trung Tâm Đo Lường Chất Lượng"
   },
 
+  "Introduction": {},
+
   "Product": {
     "ThanVuong": "Than gáo dừa vuông",
     "ThanQue": "Than gáo dừa que",
@@ -149,6 +151,7 @@
     "HatDieu": "Hạt điều rang muối",
     "Dua": "Dừa Trái"
   },
+
   "Product-Detail": {
     "Same": "Kích thước phong phú",
     "Same1": "Than Gáo Dừa Vuông được HIGLANDBP sản xuất với nhiều kích thước phù phợp với nhiều mục đích khác nhau của khách hàng.",
@@ -261,6 +264,15 @@
     "US": "Mỹ",
     "Turkey": "Thổ Nhĩ Kỳ",
     "Ukraine": "Ukraina"
+  },
+
+  "Contact": {
+    "LH": "LIÊN HỆ",
+    "Content": "Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước luôn chú trọng đến tất cả các khâu trong quy trình sản xuất từ những khâu đầu tiên, nhằm loại bỏ hoàn toàn những sản phẩm không đạt chất lượng. Đặc biệt là khâu sàng lọc nguyên liệu đầu vào.",
+    "TTLL": "Thông tin liên lạc:",
+    "Address": "Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước",
+    "Social": "Mạng xã hội:",
+    "Content2": "Bạn hãy điền nội dung tin nhắn vào form dưới đây và gửi cho chúng tôi. Chúng tôi sẽ trả lời bạn sau khi nhận được."
   },
 
   "Footer": {
