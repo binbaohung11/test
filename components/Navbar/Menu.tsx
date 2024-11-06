@@ -23,8 +23,6 @@ const Menu = ({ locale }: { locale: string }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  console.log(isMenuOpen);
-
   const toggleSubmenuOur = () => {
     setIsSubmenuOurOpen(!isSubmenuOurOpen);
   };

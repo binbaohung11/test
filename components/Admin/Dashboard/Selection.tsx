@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
-import MyEditor from './MyEditer';
-import MyImage from './MyImage';
+import MyEditor from './Blog/MyEditer';
+import MyImage from './Photo/MyImage';
 import MyVideo from './MyVideo';
 
 

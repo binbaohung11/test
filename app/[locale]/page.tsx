@@ -8,6 +8,8 @@ import Present from "@/components/Home/Present";
 import News from "@/components/Home/News";
 import Head from "next/head";
 
+
+
 export default function Home() {
   return (
     <>

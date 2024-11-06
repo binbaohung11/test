@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react";
 import { query, collection, where, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebaseConfig";
 import parse from "html-react-parser";
-import "../../../app/admin/[slug]/detail.css";
+import "../../../app/[locale]/news/[slug]/news.css";
+import PathLink from "@/components/Path/PathLink";
+import BlogOther from "../BlogOther";
 
 // Define a Blog interface
 interface Blog {
@@ -16,8 +18,6 @@ interface Blog {
 const BlogDetail = ({ params }: { params: { slug: string } }) => {
   const [blog, setBlog] = useState<Blog | null>(null); // Use Blog type or null
   const [loading, setLoading] = useState(true);
-
-  console.log(blog);
 
   useEffect(() => {
     const fetchBlogBySlug = async () => {
@@ -51,26 +51,43 @@ const BlogDetail = ({ params }: { params: { slug: string } }) => {
   const transformContent = (html: string) => {
     const transformedHtml = html
       .replace(/<h1>/g, '<h1 class="text-3xl font-bold mb-4">')
-      .replace(/<h2>/g, '<h2 class="text-2xl font-semibold mb-3">') // If you also have h2
+      .replace(/<h2>/g, '<h2 class="text-2xl font-semibold mb-3">')
       .replace(/<ul>/g, '<ul class="list-disc pl-5">')
-      .replace(/<ol>/g, '<ol class="list-decimal pl-5">') // Add classes for ordered list
+      .replace(/<ol>/g, '<ol class="list-decimal pl-5">')
       .replace(/<li>/g, '<li class="mb-2">')
-      .replace(/<blockquote>/g, '<blockquote class="border-l-4 border-gray-400 pl-4 italic">');
+      .replace(
+        /<blockquote>/g,
+        '<blockquote class="border-l-4 border-gray-400 pl-4 italic">'
+      )
+      // Corrected regex and replacement for YouTube embeds
+      .replace(
+        /<figure class="(media|image)"> <oembed url="(.*?)"><\/oembed><\/figure>/g,
+        `<iframe width="560" height="315" src="$2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"   
+   allowfullscreen></iframe>`
+      );
 
     return transformedHtml;
   };
 
   return (
-    <div className="blog-page p-4">
-      <div className="blog-container mx-auto max-w-2xl">
-        <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
-        <div className="blog-content">
+    <div className="blog-page">
+      <div className="blog-container px-5">
+        <p className="py-10 text-[15px]">
+          <PathLink />
+        </p>
+        <div>
+          <h1 className="text-[20px] md:text-[30px] md:px-20 font-bold">
+            {blog.title}
+          </h1>
+          <p className="blog-date text-gray-500 text-center">
+            {new Date(blog.createdAt.seconds * 1000).toLocaleDateString()}
+          </p>
+        </div>
+        <div className="blog-content pb-10">
           {parse(transformContent(blog.content))}
         </div>
-        <p className="blog-date text-gray-500">
-          {new Date(blog.createdAt.seconds * 1000).toLocaleDateString()}
-        </p>
       </div>
+      <BlogOther />
     </div>
   );
 };

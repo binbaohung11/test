@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build ",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,6 +13,7 @@
     "@ckeditor/ckeditor5-core": "^43.3.0",
     "@ckeditor/ckeditor5-react": "^9.3.1",
     "@emailjs/browser": "^4.4.1",
+    "antd": "^5.21.6",
     "firebase": "^11.0.1",
     "framer-motion": "^11.11.11",
     "html-react-parser": "^5.1.18",

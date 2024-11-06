@@ -60,6 +60,7 @@ export async function generateMetadata({
   };
 }
 
+
 export default async function RootLayout({
   children,
   params: { locale },

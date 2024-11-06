@@ -13,16 +13,18 @@ const Navbar = ({ locale }: { locale: string }) => {
   const t = useTranslations("Menu");
   const tProduct = useTranslations("Product");
   const tOur = useTranslations("Menu-Our");
+  const tNews = useTranslations("News");
   const pathname = usePathname();
   const [showIntro, setShowIntro] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
+  const [showNews, setShowNews] = useState(false);
 
   return (
     <div className="w-full sticky top-0 z-50 bg-white">
       <div className="py-5 px-[10rem] max-sm:px-[3rem] max-md:px-[3rem] max-lg:px-[3rem] max-xl:px-[5rem] max-2xl:px-[7rem] max-xl:py-4 max-2xl:py-5">
         <div className="w-full flex max-md:hidden">
           <div className="w-[15%] lg:w-[20%] flex items-center justify-center">
-            <Link href={'/'}>
+            <Link href={"/"}>
               <Image
                 src={logo}
                 alt="logo"
@@ -155,13 +157,39 @@ const Navbar = ({ locale }: { locale: string }) => {
 
             <button
               className={`hover:text-[#639F7A] ${
-                pathname === `/${locale}/library`
+                pathname.startsWith(`/${locale}/news`)
                   ? "border-b-[2.5px] border-black"
                   : ""
               }`}
+              onMouseEnter={() => setShowNews(true)}
+              onMouseLeave={() => setShowNews(false)}
             >
-              <Link href={`/${locale}/library`}>{t("Library")}</Link>
+              <p>{t("News")}</p>
+              <AnimatePresence>
+                {showNews && (
+                  <motion.div
+                    className="absolute w-[240px] bg-white shadow-md rounded-md p-4 z-50 pl-10 max-lg:pl-4 max-xl:pl-6 max-lg:w-[180px] max-xl:w-[180px] "
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex flex-col font-mainR text-[#E1E1E1] text-[18px] space-y-3 max-md:text-[12px] max-lg:text-[12px] max-xl:text-[14px] max-2xl:text-[16px]">
+                      <button className="text-left hover:text-black">
+                        <Link href={`/${locale}/news`}>{tNews("News")}</Link>
+                      </button>
+                      <button className="text-left hover:text-black">
+                        <Link href={`/${locale}/`}>{tNews("Photo")}</Link>
+                      </button>
+                      <button className="text-left hover:text-black">
+                        <Link href={`/${locale}/`}>{tNews("Video")}</Link>
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </button>
+
             <button
               className={`hover:text-[#639F7A] ${
                 pathname === `/${locale}/recruitment`

@@ -1,11 +1,13 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
 const PathLink = () => {
   const pathname = usePathname();
   const t = useTranslations("Link");
+  const locale = useLocale();
 
   const breadcrumbs: { [key: string]: React.ReactNode } = {
     "[locale]/our/introduction": (
@@ -98,15 +100,30 @@ const PathLink = () => {
       </div>
     ),
   };
-
+  // Normalize pathname by replacing the locale with [locale]
   const normalizedPath = pathname.replace(/^\/[^/]+/, "[locale]");
-  const breadcrumb = breadcrumbs[normalizedPath] || "Đường dẫn không xác định";
 
-  return (
-    <div>
-      {breadcrumb} {/* No <p> here, just render the breadcrumb directly */}
-    </div>
-  );
+  // Check if the path is under [locale]/news/
+  const isNewsPath = normalizedPath.startsWith("[locale]/news/");
+  if (isNewsPath) {
+    breadcrumbs["[locale]/news/..."] = (
+      <div className="text-[12px] md:text-[16px] ">
+        <span className="text-[#969696] hover:text-black">
+          <Link href={`/${locale}`}>{t("Home")}</Link> {">"}
+        </span>
+        <span className="text-black">
+          <Link href={`/${locale}/news`}>{t("News")}</Link>
+        </span>
+      </div>
+    );
+  }
+
+  const breadcrumb =
+    breadcrumbs[normalizedPath] ||
+    breadcrumbs["[locale]/news/..."] ||
+    "Đường dẫn không xác định";
+
+  return <div>{breadcrumb}</div>;
 };
 
 export default PathLink;
