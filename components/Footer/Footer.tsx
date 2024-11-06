@@ -1,5 +1,5 @@
 import React from "react";
-import tron from "../../assets/image/footer/tron-image.png";
+import tron from "../../assets/image/contact/highlandbp-logo.png";
 import phone from "../../assets/image/footer/phone-icon.png";
 import mail from "../../assets/image/footer/mail-icon.png";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import fb from "../../assets/image/footer/fb-icon.png";
 import zalo from "../../assets/image/footer/zalo-icon.png";
 import p from "../../assets/image/contact/snap-image.png";
 import { fb_help, mail_help, map_help, phone_help, snap_help, zalo_help } from "@/lib/helpFunc";
+
 
 const Footer = () => {
   const t = useTranslations("Footer");
