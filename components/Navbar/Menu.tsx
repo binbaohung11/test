@@ -10,7 +10,7 @@ const Menu = ({ locale }: { locale: string }) => {
   const t = useTranslations("Menu");
   const tOur = useTranslations("Menu-Our");
   const tProduct = useTranslations("Menu-Product");
-  const tLibrary = useTranslations("Menu-Library");
+  const tLibrary = useTranslations("News");
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubmenuOurOpen, setIsSubmenuOurOpen] = useState(false);
@@ -204,26 +204,32 @@ const Menu = ({ locale }: { locale: string }) => {
                 </div>
               )}
             </li>
-            <li className="py-2 cursor-pointer px-6 space-y-2">
+
+            <li className="py-2 cursor-pointer px-6">
               <div
                 onClick={toggleSubmenuLibrary}
                 className="flex items-center space-x-3"
               >
-                <p>{t("Library")}</p>
+                <p>{t("News")}</p>
                 <div>
                   <Image src={arrow} alt="arrow" />
                 </div>
               </div>
               {isSubmenuLibraryOpen && (
                 <div className="text-[13px] font-mainR text-[#969696]">
-                  <p className="hover:text-black">{tLibrary("Image")}</p>
+                  <p className="hover:text-black">
+                    <Link onClick={toggleMenu} href={`/${locale}/news`}>
+                      {tLibrary("News")}
+                    </Link>
+                  </p>
+                  <p className="hover:text-black">
+                    <Link onClick={toggleMenu} href={`/${locale}/photo`}>
+                      {tLibrary("Photo")}
+                    </Link>
+                  </p>
                   <p className="hover:text-black">{tLibrary("Video")}</p>
                 </div>
               )}
-            </li>
-
-            <li className="py-2 cursor-pointer px-6">
-              <Link href={`/${locale}/news`}>{t("News")}</Link>
             </li>
             <li className="py-2 cursor-pointer px-6">
               <Link href={`/${locale}/recruitment`}>{t("Recruitment")}</Link>
