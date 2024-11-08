@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import MyEditor from './Blog/MyEditer';
 import MyImage from './Photo/MyImage';
-import MyVideo from './MyVideo';
+import MyVideo from './Video/MyVideo';
 
 
 const SelectOption: React.FC = () => {
