@@ -62,7 +62,7 @@ const Product = () => {
       <div className="text-[12px] md:text-[16px] lg:text-[20px] xl:text-[24px] font-mainR">
         <p className="font-mainB mt-4">{t("Same")}</p>
         <div className="space-y-2">
-          <p>{t("Same1")}</p>
+          <p>{currentProduct?.intro4}</p>
         </div>
       </div>
 

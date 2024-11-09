@@ -16,7 +16,7 @@ const NavbarAdmin = () => {
           </Link>
         </li>
         <li>
-          <Link href="/admin/recruitment">
+          <Link href="/admin">
             <p className="text-white hover:underline">Tuyển Dụng</p>
           </Link>
         </li>

@@ -40,6 +40,7 @@ export const getProductData = (t: TranslationFunction) => [
     intro1: t("ThanVuong1"),
     intro2: t("ThanVuong2"),
     intro3: t("ThanVuong3"),
+    intro4: t("ThanVuong4"),
     img: [
       { image: cubeImage1, title: "Cube - (2.2x2.2x2.2)cm" },
       { image: cubeImage2, title: "Cube - (2.0x2.0x1.8)cm" },
@@ -58,6 +59,7 @@ export const getProductData = (t: TranslationFunction) => [
     intro1: t("ThanQue1"),
     intro2: t("ThanQue2"),
     intro3: t("ThanQue3"),
+    intro4: t("ThanQue4"),
     img: [
       { image: stick2x4, title: "Stick - (2x4)cm" },
       { image: stick1x3, title: "Stick - (1.8x3.5)cm" },
@@ -73,6 +75,7 @@ export const getProductData = (t: TranslationFunction) => [
     intro1: t("ThanLG1"),
     intro2: t("ThanLG2"),
     intro3: t("ThanLG3"),
+    intro4: t("ThanLG4"),
     img: [
       { image: hexagon2x4, title: "Hexagon - (2x4)cm" },
       { image: hexagon25x4, title: "Hexagon - (2.5x4)cm" },
@@ -89,6 +92,7 @@ export const getProductData = (t: TranslationFunction) => [
     intro1: t("ThanBBQ1"),
     intro2: t("ThanBBQ2"),
     intro3: t("ThanBBQ3"),
+    intro4: t("ThanBBQ4"),
     img: [
       { image: bbq4x5, title: "BBQ - (4x5)cm" },
       { image: bbq4x10, title: "BBQ - (4x10)cm" },
@@ -107,6 +111,7 @@ export const getProductData = (t: TranslationFunction) => [
     intro1: t("ThanNL1"),
     intro2: t("ThanNL2"),
     intro3: t("ThanNL3"),
+    intro4: t("ThanNL4"),
     img: [
       { image: material1, title: t("NL") },
       { image: material2, title: t("NL") },
@@ -121,6 +126,7 @@ export const getProductData = (t: TranslationFunction) => [
     intro1: t("ThanXC1"),
     intro2: t("ThanXC2"),
     intro3: t("ThanXC3"),
+    intro4: t("ThanXC4"),
     img: [{ image: xc, title: t("XC") }],
     imagez: cubeImagez,
   },
@@ -132,6 +138,7 @@ export const getProductData = (t: TranslationFunction) => [
     intro1: t("ThanCF1"),
     intro2: t("ThanCF2"),
     intro3: t("ThanCF3"),
+    intro4: t("ThanCF4"),
     img: [{ image: cf, title: t("CF") }],
     imagez: cubeImagez,
   },
