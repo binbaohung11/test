@@ -1,11 +1,11 @@
-import Dashboard from "@/components/Admin/Dashboard/Dashboard";
 import PrivateRoute from "@/components/Admin/Dashboard/PrivateRoute";
+import MyRecruitment from "@/components/Admin/Dashboard/Recruitment/MyRecruitment";
 import React from "react";
 
 const AdminPage = () => {
   return (
     <PrivateRoute>
-      <Dashboard />
+      <MyRecruitment />
     </PrivateRoute>
   );
 };

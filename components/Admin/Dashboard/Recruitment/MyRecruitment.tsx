@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { db } from "@/lib/firebaseConfig";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import "../../../../app/admin/create/createBlog.css";
 
 const MyRecruitment = () => {
@@ -28,6 +28,22 @@ const MyRecruitment = () => {
     fetchData();
   }, [db]);
 
+  // Function to save content to Firebase
+  const handleSave = async () => {
+    try {
+      const docRef = doc(db, "recruitment", documentId);
+      await updateDoc(docRef, {
+        content: editorData, // Save the editor data
+        updatedAt: new Date(), // Optionally, add a timestamp for the update
+      });
+      console.log("Document updated successfully!");
+      alert("Tuyển Dụng đã được chỉnh sửa thành công!"); // Show success message
+    } catch (error) {
+      console.error("Error updating document:", error);
+      alert("Có lỗi xảy ra khi lưu dữ liệu!"); // Show error message
+    }
+  };
+
   return (
     <div className="editor-container">
       <h1 className="text-[30px] text-center py-5 font-mainB">
@@ -47,7 +63,9 @@ const MyRecruitment = () => {
         />
       </div>
 
-      <button className="save-button">Chỉnh Sửa Tuyển Dụng</button>
+      <button className="save-button" onClick={handleSave}>
+        Chỉnh Sửa Tuyển Dụng
+      </button>
     </div>
   );
 };
