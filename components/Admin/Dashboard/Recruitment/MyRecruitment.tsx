@@ -28,9 +28,6 @@ const MyRecruitment = () => {
     fetchData();
   }, [db]);
 
-  // Function to save content to Firebase
- 
-
   return (
     <div className="editor-container">
       <h1 className="text-[30px] text-center py-5 font-mainB">
@@ -50,9 +47,7 @@ const MyRecruitment = () => {
         />
       </div>
 
-      <button className="save-button" >
-        Chỉnh Sửa Tuyển Dụng
-      </button>
+      <button className="save-button">Chỉnh Sửa Tuyển Dụng</button>
     </div>
   );
 };
