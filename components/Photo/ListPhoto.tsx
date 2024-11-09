@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { collection, getDocs, Timestamp } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "@/lib/firebaseConfig";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +10,7 @@ import { Pagination, Spin } from "antd";
 // Define the interface based on your Firebase data structure
 interface ImageData {
   id: string;
-  createdAt: Timestamp;
+  createdAt: { seconds: number }; // Timestamp from Firebase
   description: string;
   imageUrl: string;
   keywords: string;
@@ -30,7 +30,13 @@ const ListPhoto: React.FC = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const querySnapshot = await getDocs(collection(db, "imageData"));
+        // Query to get images sorted by createdAt (descending order)
+        const imageQuery = query(
+          collection(db, "imageData"),
+          orderBy("createdAt", "desc") // Sort by createdAt in descending order
+        );
+        
+        const querySnapshot = await getDocs(imageQuery);
         const images: ImageData[] = querySnapshot.docs.map(
           (doc) => ({ id: doc.id, ...doc.data() } as ImageData)
         );

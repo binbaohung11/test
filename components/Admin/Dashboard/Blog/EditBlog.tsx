@@ -148,42 +148,56 @@ const EditBlog = ({ params }: { params: { editBlog: string } }) => {
     <div className="editor-container">
       {/* Title, Description, and Keywords Inputs */}
       <div>
-        <input
-          type="text"
-          placeholder="Enter Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="input-field"
-        />
-        <textarea
-          placeholder="Enter Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="textarea-field"
-          rows={3}
-        />
-        <input
-          type="text"
-          placeholder="Enter Keywords (comma-separated)"
-          value={keywords}
-          onChange={(e) => setKeywords(e.target.value)}
-          className="input-field"
-        />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          className="input-field"
-        />
+        <div>
+          <p className="text-[20px]">Tên Tiêu Đề</p>
+          <input
+            type="text"
+            placeholder="Nhập Tên Tiêu Đề"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="input-field"
+          />
+        </div>
+        <div>
+          <p className="text-[20px]">Miêu Tả</p>
+          <textarea
+            placeholder="Nhập Miêu Tả"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="textarea-field"
+            rows={3}
+          />
+        </div>
+        <div>
+          <p className="text-[20px]">Key Word</p>
+          <input
+            type="text"
+            placeholder="Nhập KeyWord"
+            value={keywords}
+            onChange={(e) => setKeywords(e.target.value)}
+            className="input-field"
+          />
+        </div>
+        <div>
+          <p className="text-[20px]">Ảnh Chính</p>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            className="input-field"
+          />
+        </div>
 
         {imageUrl && (
           <div>
-            <Image src={imageUrl} alt={title} />
+            <Image src={imageUrl} alt={title} width={1000} height={1000} />
           </div>
         )}
       </div>
 
       <div>
+        <p className="text-[20px] pt-5">Nội Dung Blog</p>
+
         <CKEditor
           editor={ClassicEditor}
           data={editorData}
@@ -208,7 +222,7 @@ const EditBlog = ({ params }: { params: { editBlog: string } }) => {
       </div>
 
       <button onClick={handleUpdate} className="save-button">
-        Update
+        Chỉnh Sửa
       </button>
     </div>
   );

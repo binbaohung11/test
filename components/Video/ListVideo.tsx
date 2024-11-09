@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { collection, getDocs, Timestamp } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "@/lib/firebaseConfig";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +10,7 @@ import { Pagination, Spin } from "antd";
 // Define the interface based on your Firebase data structure
 interface ImageData {
   id: string;
-  createdAt: Timestamp;
+  createdAt: { seconds: number }; // Timestamp from Firebase
   description: string;
   imageUrl: string;
   keywords: string;
@@ -30,13 +30,19 @@ const ListVideo: React.FC = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const querySnapshot = await getDocs(collection(db, "videoData"));
-        const images: ImageData[] = querySnapshot.docs.map(
+        // Query to get videos sorted by createdAt (descending order)
+        const videoQuery = query(
+          collection(db, "videoData"),
+          orderBy("createdAt", "desc") // Sort by createdAt in descending order
+        );
+        
+        const querySnapshot = await getDocs(videoQuery);
+        const videos: ImageData[] = querySnapshot.docs.map(
           (doc) => ({ id: doc.id, ...doc.data() } as ImageData)
         );
-        setImageData(images);
+        setImageData(videos);
       } catch (error) {
-        console.error("Error fetching image data: ", error);
+        console.error("Error fetching video data: ", error);
       } finally {
         setLoading(false);
       }
@@ -62,30 +68,30 @@ const ListVideo: React.FC = () => {
       ) : (
         <div>
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
-            {currentItems.map((news) => (
-              <div key={news.id} className="w-full py-4">
+            {currentItems.map((video) => (
+              <div key={video.id} className="w-full py-4">
                 <div className="flex justify-center md:block">
                   <Image
-                    src={news.imageUrl}
-                    alt={news.title}
+                    src={video.imageUrl}
+                    alt={video.title}
                     width={1000}
                     height={1000}
                     className="w-[400px] max-h-[200px] xl:w-[600px] xl:max-h-[380px] rounded-[10px]"
                   />
                 </div>
                 <div className="text-[16px] md:text-[20px] xl:text-[24px] font-mainB w-full md:w-[85%] xl:w-[80%] text-center md:text-start md:px-2">
-                  {news.title}
+                  {video.title}
                 </div>
                 <div className="text-[#525252] text-[11px] md:text-[14px] py-2 text-center md:text-start md:px-2">
                   <p>Bởi HIGLANDBP</p>
                   <p>
                     {new Date(
-                      news.createdAt.seconds * 1000
+                      video.createdAt.seconds * 1000
                     ).toLocaleDateString()}
                   </p>
                 </div>
                 <div className="text-center md:text-start md:px-2">
-                  <Link href={`/${locale}/video/${news.slug}`}>
+                  <Link href={`/${locale}/video/${video.slug}`}>
                     <button className="border-2 border-[#39444D] px-5 py-1.5 md:px-10 md:py-2 rounded-full font-mainB hover:bg-[#E1E1E1]">
                       Xem thêm
                     </button>

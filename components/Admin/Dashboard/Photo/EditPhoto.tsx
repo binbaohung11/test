@@ -1,19 +1,45 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "@/lib/firebaseConfig";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { doc, updateDoc, getDoc } from "firebase/firestore";
 import slugify from "slugify";
 import "../../../../app/admin/create/createBlog.css";
+import { db } from "@/lib/firebaseConfig";
+import Image from "next/image";
 
-const MyImage = () => {
+const EditPhoto = ({ params }: { params: { editImage: string } }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [keywords, setKeywords] = useState("");
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState("");
   const [secondaryImages, setSecondaryImages] = useState<File[]>([]);
-  const db = getFirestore();
+
+  const { editImage } = params; // Get the blog post ID from the URL
+
+  useEffect(() => {
+    const fetchImageData = async () => {
+      try {
+        const docRef = doc(db, "imageData", editImage);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          setTitle(data?.title || "");
+          setDescription(data?.description || "");
+          setKeywords(data?.keywords || "");
+          setImageUrl(data?.imageUrl || "");
+        } else {
+          alert("No data found for the given image ID");
+        }
+      } catch (e) {
+        console.error("Error fetching document: ", e);
+      }
+    };
+
+    fetchImageData();
+  }, [editImage]);
 
   const generateSlug = (title: string) => {
     const randomId = Math.floor(Math.random() * 100000);
@@ -65,52 +91,62 @@ const MyImage = () => {
 
       const secondaryImageUrls: string[] = [];
       for (const image of secondaryImages) {
-        const imageUrl = await uploadImageToFirebase(image);
-        secondaryImageUrls.push(imageUrl);
+        const uploadedSecondaryImageUrl = await uploadImageToFirebase(image);
+        secondaryImageUrls.push(uploadedSecondaryImageUrl);
       }
 
-      const docRef = await addDoc(collection(db, "imageData"), {
+      const docRef = doc(db, "imageData", editImage);
+      await updateDoc(docRef, {
         title: title,
         description: description,
         keywords: keywords,
         slug: slug,
         imageUrl: uploadedImageUrl,
         createdAt: new Date(),
-        secondaryImageUrls: secondaryImageUrls, // Store secondary image URLs
+        secondaryImageUrls: secondaryImageUrls, // Update secondary image URLs
       });
-      console.log("Document written with ID: ", docRef.id);
-      alert("Data saved successfully!");
+
+      alert("Data updated successfully!");
     } catch (e) {
-      console.error("Error adding document: ", e);
+      console.error("Error updating document: ", e);
       alert("Error saving data!");
     }
   };
 
   return (
     <div className="editor-container">
-      <h1 className="text-[30px] text-center py-5 font-mainB">Thêm Ảnh Mới</h1>
+      <h1 className="text-[30px] text-center py-5 font-mainB">Sửa Ảnh</h1>
       <div>
-        <input
-          type="text"
-          placeholder="Tên Tiêu Đề"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="input-field"
-        />
-        <textarea
-          placeholder="Mô Tả Sơ Lược"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="textarea-field"
-          rows={3}
-        />
-        <input
-          type="text"
-          placeholder="KeyWord cho SEO ví dụ: mua laptop, laptop gaming, laptop văn phòng"
-          value={keywords}
-          onChange={(e) => setKeywords(e.target.value)}
-          className="input-field"
-        />
+        <div>
+          <p className="text-[20px]">Tên Tiêu Đề</p>
+          <input
+            type="text"
+            placeholder="Tên Tiêu Đề"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="input-field"
+          />
+        </div>
+        <div>
+          <p className="text-[20px]">Tên Tiêu Đề</p>
+          <textarea
+            placeholder="Mô Tả Sơ Lược"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="textarea-field"
+            rows={3}
+          />
+        </div>
+        <div>
+          <p className="text-[20px]">Tên Tiêu Đề</p>
+          <input
+            type="text"
+            placeholder="KeyWord cho SEO ví dụ: mua laptop, laptop gaming, laptop văn phòng"
+            value={keywords}
+            onChange={(e) => setKeywords(e.target.value)}
+            className="input-field"
+          />
+        </div>
         <div>
           <p className="text-[20px]">Hình Ảnh Chính</p>
           <input
@@ -119,6 +155,11 @@ const MyImage = () => {
             onChange={handleImageChange}
             className="input-field"
           />
+          {imageUrl && (
+            <div>
+              <Image src={imageUrl} alt={title} width={1000} height={1000} />
+            </div>
+          )}
         </div>
       </div>
       <div>
@@ -139,4 +180,4 @@ const MyImage = () => {
   );
 };
 
-export default MyImage;
+export default EditPhoto;

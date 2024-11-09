@@ -116,6 +116,7 @@ const MyEditor = () => {
 
   return (
     <div className="editor-container">
+      <h1 className="text-[30px] text-center py-5 font-mainB">Thêm Blog Mới</h1>
       {/* Title, Description, and Keywords Inputs */}
       <div>
         <input

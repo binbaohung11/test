@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import { db } from "@/lib/firebaseConfig";
 import {
@@ -42,18 +42,18 @@ const ListNews = () => {
     try {
       let newsQuery;
       if (page === 1) {
-        // Fetch the first page
+        // Fetch the first page with latest news
         newsQuery = query(
           collection(db, "editorData"),
-          orderBy("createdAt"),
+          orderBy("createdAt", "desc"), // Order by 'createdAt' descending
           limit(itemsPerPage)
         );
       } else {
-        // Fetch subsequent pages using startAfter
+        // Fetch subsequent pages using startAfter for pagination
         if (!lastDoc) return; // Prevent querying if lastDoc is not set
         newsQuery = query(
           collection(db, "editorData"),
-          orderBy("createdAt"),
+          orderBy("createdAt", "desc"), // Order by 'createdAt' descending
           startAfter(lastDoc),
           limit(itemsPerPage)
         );
@@ -90,7 +90,7 @@ const ListNews = () => {
 
   useEffect(() => {
     fetchNews(currentPage);
-  }, []);
+  }, []); // Initial fetch when the component mounts
 
   return (
     <div>
@@ -113,7 +113,7 @@ const ListNews = () => {
                     className="w-[400px] max-h-[200px]  xl:w-[600px] xl:max-h-[380px] rounded-[10px]"
                   />
                 </div>
-                <div className="text-[16px] md:text-[20px] xl:text-[24px]  font-mainB w-full md:w-[85%] xl:w-[80%] text-center md:text-start md:px-2">
+                <div className="text-[16px] md:text-[20px] xl:text-[24px] font-mainB w-full md:w-[85%] xl:w-[80%] text-center md:text-start md:px-2">
                   {news.title}
                 </div>
                 <div className=" text-[#525252] text-[11px] md:text-[14px] py-2 text-center md:text-start md:px-2">
@@ -135,7 +135,7 @@ const ListNews = () => {
             ))}
           </div>
           {/* Pagination controls from Ant Design */}
-          <div className="w-full flex justify-center ">
+          <div className="w-full flex justify-center">
             <Pagination
               current={currentPage}
               total={totalPages * itemsPerPage} // Total number of items

@@ -72,8 +72,8 @@ const VideoDetail = ({ params }: { params: { slug: string } }) => {
             <div className="blog-content pb-10 flex justify-center">
               {data.youtubeLink && (
                 <iframe
-                  width="560"
-                  height="315"
+                  width="1000"
+                  height="650"
                   src={`https://www.youtube.com/embed/${extractYouTubeId(
                     data.youtubeLink
                   )}`}
