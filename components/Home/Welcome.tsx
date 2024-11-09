@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Certification from "../../assets/image/home/certification.png";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Welcome() {
   const t = useTranslations("Home");
+  const locale = useLocale();
 
   return (
     <div className="px-5 md:px-10 lg:px-20 xl:px-32 w-full flex  py-10 lg:py-20">
@@ -20,9 +22,11 @@ export default function Welcome() {
           {t("Content")}
         </p>
         <div className="text-left mt-2 lg:mt-5">
-          <button className="text-[11px] md:text-[16px] lg:text-[18px] xl:text-[20px] px-3 py-1.5 font-mainB border border-[#969696] rounded-full hover:bg-[#E1E1E1]">
-            {t("SeeMore")}
-          </button>
+          <Link href={`${locale}/our/introduction`}>
+            <button className="text-[11px] md:text-[16px] lg:text-[18px] xl:text-[20px] px-3 py-1.5 font-mainB border border-[#969696] rounded-full hover:bg-[#E1E1E1]">
+              {t("SeeMore")}
+            </button>
+          </Link>
         </div>
       </div>
       <div className="w-[50%] flex items-center justify-center">

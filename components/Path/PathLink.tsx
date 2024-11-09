@@ -15,7 +15,7 @@ const PathLink = () => {
         <span className="text-[#969696]">
           {t("Our")} {">"}
         </span>
-        <span className="text-black">{t("Introduction")}</span>
+        <span className="text-black"> {t("Introduction")}</span>
       </div>
     ),
     "[locale]/our/certificate": (
@@ -23,7 +23,7 @@ const PathLink = () => {
         <span className="text-[#969696]">
           {t("Our")} {">"}
         </span>
-        <span className="text-black">{t("certificate")}</span>
+        <span className="text-black"> {t("certificate")}</span>
       </div>
     ),
     "[locale]/product/coconut-charcoal-cube": (
@@ -109,10 +109,10 @@ const PathLink = () => {
     breadcrumbs["[locale]/news/..."] = (
       <div className="text-[12px] md:text-[16px] ">
         <span className="text-[#969696] hover:text-black">
-          <Link href={`/${locale}`}>{t("Home")}</Link> {">"}
+          <Link href={`/${locale}`}>{t("Home")} </Link> {">"}
         </span>
         <span className="text-black">
-          <Link href={`/${locale}/news`}>{t("News")}</Link>
+          <Link href={`/${locale}/news`}> {t("News")}</Link>
         </span>
       </div>
     );

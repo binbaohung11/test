@@ -1,12 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useTranslations } from "next-intl";
 
 const Form = () => {
   const [fullname, setFullname] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
+  const t = useTranslations("Contact");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -51,7 +53,7 @@ const Form = () => {
             htmlFor="fullname"
             className="block font-medium text-gray-700 mb-1 font-mainB"
           >
-            Họ và tên
+            {t("Name")}
           </label>
           <input
             type="text"
@@ -60,7 +62,7 @@ const Form = () => {
             value={fullname}
             onChange={(e) => setFullname(e.target.value)}
             className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-200"
-            placeholder="Nhập họ và tên"
+            placeholder={t("Name1")}
             required
           />
         </div>
@@ -71,7 +73,7 @@ const Form = () => {
             htmlFor="phone"
             className="block font-medium text-gray-700 mb-1 font-mainB"
           >
-            Số điện thoại
+            {t("Phone")}
           </label>
           <input
             type="tel"
@@ -80,7 +82,7 @@ const Form = () => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-200"
-            placeholder="Nhập số điện thoại"
+            placeholder={t("Phone1")}
             required
           />
         </div>
@@ -91,7 +93,7 @@ const Form = () => {
             htmlFor="email"
             className="block font-medium text-gray-700 mb-1 font-mainB"
           >
-            Email
+            {t("Email")}
           </label>
           <input
             type="email"
@@ -100,7 +102,7 @@ const Form = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-200"
-            placeholder="Nhập email"
+            placeholder={t("Email1")}
             required
           />
         </div>
@@ -111,7 +113,7 @@ const Form = () => {
             htmlFor="content"
             className="block font-medium text-gray-700 mb-1 font-mainB"
           >
-            Nội dung
+            {t("Description")}
           </label>
           <textarea
             id="content"
@@ -120,7 +122,7 @@ const Form = () => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             className="w-full border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-200"
-            placeholder="Nhập nội dung"
+            placeholder={t("Description1")}
             required
           />
         </div>
@@ -131,7 +133,7 @@ const Form = () => {
             type="submit"
             className="bg-[#D9D9D9] px-10 py-1.5 md:px-14 md:py-2 font-mainB rounded-[10px]"
           >
-            Gửi
+           {t("Send")}
           </button>
         </div>
       </form>

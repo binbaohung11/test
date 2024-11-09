@@ -84,7 +84,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước
+                {t("Address")}
               </a>
             </div>
           </div>

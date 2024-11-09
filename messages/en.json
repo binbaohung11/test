@@ -1,7 +1,7 @@
 {
   "Link": {
     "Home": "Home",
-    "Our": "About Us",
+    "Our": "Our",
     "Introduction": "Introduction",
     "certificate": "Quality Certification",
     "Product": "Products",
@@ -280,7 +280,16 @@
     "TTLL": "Contact Information:",
     "Address": "Thuan Hoa Hamlet, Thuan Loi Commune, Dong Phu District, Binh Phuoc Province",
     "Social": "Social Media:",
-    "Content2": "Please fill in your message below and send it to us. We will respond after receiving your message."
+    "Content2": "Please fill in your message below and send it to us. We will respond after receiving your message.",
+    "Name": "Full Name",
+    "Name1": "Enter full name",
+    "Phone": "Phone Number",
+    "Phone1": "Enter phone number",
+    "Email": "Email",
+    "Email1": "Enter email",
+    "Description": "Content",
+    "Description1": "Enter content",
+    "Send":"Send"
   },
 
   "Footer": {

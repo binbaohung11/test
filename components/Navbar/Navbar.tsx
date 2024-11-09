@@ -190,15 +190,19 @@ const Navbar = ({ locale }: { locale: string }) => {
               </AnimatePresence>
             </button>
 
-            <button
-              className={`hover:text-[#639F7A] ${
-                pathname === `/${locale}/recruitment`
-                  ? "border-b-[2.5px] border-black"
-                  : ""
-              }`}
-            >
-              <Link href={`/${locale}/recruitment`}>{t("Recruitment")}</Link>
-            </button>
+            {locale === "en" ? (
+              ""
+            ) : (
+              <button
+                className={`hover:text-[#639F7A] ${
+                  pathname === `/${locale}/recruitment`
+                    ? "border-b-[2.5px] border-black"
+                    : ""
+                }`}
+              >
+                <Link href={`/${locale}/recruitment`}>{t("Recruitment")}</Link>
+              </button>
+            )}
             <button
               className={`hover:text-[#639F7A] ${
                 pathname === `/${locale}/contact`

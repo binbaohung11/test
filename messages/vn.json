@@ -289,7 +289,16 @@
     "TTLL": "Thông tin liên lạc:",
     "Address": "Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước",
     "Social": "Mạng xã hội:",
-    "Content2": "Bạn hãy điền nội dung tin nhắn vào form dưới đây và gửi cho chúng tôi. Chúng tôi sẽ trả lời bạn sau khi nhận được."
+    "Content2": "Bạn hãy điền nội dung tin nhắn vào form dưới đây và gửi cho chúng tôi. Chúng tôi sẽ trả lời bạn sau khi nhận được.",
+    "Name": "Họ và Tên",
+    "Name1": "Nhập họ và tên",
+    "Phone": "Số Điện Thoại",
+    "Phone1": "Nhập số điện thoại",
+    "Email": "Email",
+    "Email1": "Nhập Email",
+    "Description": "Nội Dung",
+    "Description1":"Nhập nội dung",
+    "Send":"Gửi"
   },
 
   "Footer": {
