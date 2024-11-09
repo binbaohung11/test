@@ -54,7 +54,7 @@ const MyRecruitment = () => {
         <CKEditor
           editor={ClassicEditor}
           data={editorData}
-          onChange={(editor) => {
+          onChange={(event, editor) => {
             setEditorData(editor.getData()); // Update state with editor content
           }}
           config={{
