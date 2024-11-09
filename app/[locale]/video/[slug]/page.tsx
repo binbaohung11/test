@@ -34,7 +34,7 @@ export async function generateMetadata({
       const blogData = blogSnapshot.docs[0].data();
       title = `${blogData.title} - Hình Ảnh` || title; // Set title from Firebase or default
       description = blogData.description || description; // Set description from Firebase or default
-      image = blogData.image || image; // Set image from Firebase or default
+      image = blogData.imageUrl || image; // Set image from Firebase or default
       canonicalUrl = `${baseUrl}/${params.locale}/photo/${slug}`; // Dynamic canonical URL based on slug
       keywords = blogData.keywords || keywords; // Set keywords from Firebase or default
     } else {
