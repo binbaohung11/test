@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { db } from "@/lib/firebaseConfig";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import "../../../../app/admin/create/createBlog.css";
 
 const MyRecruitment = () => {
@@ -50,7 +50,7 @@ const MyRecruitment = () => {
         />
       </div>
 
-      <button className="save-button" onClick={handleSave}>
+      <button className="save-button" >
         Chỉnh Sửa Tuyển Dụng
       </button>
     </div>
