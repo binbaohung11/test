@@ -29,20 +29,7 @@ const MyRecruitment = () => {
   }, [db]);
 
   // Function to save content to Firebase
-  const handleSave = async () => {
-    try {
-      const docRef = doc(db, "recruitment", documentId);
-      await updateDoc(docRef, {
-        content: editorData, // Save the editor data
-        updatedAt: new Date(), // Optionally, add a timestamp for the update
-      });
-      console.log("Document updated successfully!");
-      alert("Tuyển Dụng đã được chỉnh sửa thành công!"); // Show success message
-    } catch (error) {
-      console.error("Error updating document:", error);
-      alert("Có lỗi xảy ra khi lưu dữ liệu!"); // Show error message
-    }
-  };
+ 
 
   return (
     <div className="editor-container">
