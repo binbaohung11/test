@@ -5,6 +5,7 @@ import logo from "../../assets/icons_navbar/highlandbp-logo-iso.png";
 import arrow from "../../assets/icons_navbar/down-arrow.png";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import FindMenu from "./FindMenu";
 
 const Menu = ({ locale }: { locale: string }) => {
   const t = useTranslations("Menu");
@@ -71,12 +72,7 @@ const Menu = ({ locale }: { locale: string }) => {
         <div className="w-[35%]">
           <Image src={logo} alt="logo" className="w-[100px]" />
         </div>
-        <div className="w-[65%] text-right">
-          <input
-            type="text"
-            className="bg-[#D9D9D9] py-1 px-5 rounded-[15px] w-[90%]"
-          />
-        </div>
+        <FindMenu />
       </div>
 
       {/* Dropdown Menu */}
@@ -227,7 +223,11 @@ const Menu = ({ locale }: { locale: string }) => {
                       {tLibrary("Photo")}
                     </Link>
                   </p>
-                  <p className="hover:text-black">{tLibrary("Video")}</p>
+                  <p className="hover:text-black">
+                    <Link onClick={toggleMenu} href={`/${locale}/video`}>
+                      {tLibrary("Video")}
+                    </Link>
+                  </p>
                 </div>
               )}
             </li>

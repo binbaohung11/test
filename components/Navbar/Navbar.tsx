@@ -20,7 +20,7 @@ const Navbar = ({ locale }: { locale: string }) => {
   const [showNews, setShowNews] = useState(false);
 
   return (
-    <div className="w-full sticky top-0 z-50 bg-white">
+    <div className="w-full sticky top-0 z-40 bg-white">
       <div className="py-5 px-[10rem] max-sm:px-[3rem] max-md:px-[3rem] max-lg:px-[3rem] max-xl:px-[5rem] max-2xl:px-[7rem] max-xl:py-4 max-2xl:py-5">
         <div className="w-full flex max-md:hidden">
           <div className="w-[15%] lg:w-[20%] flex items-center justify-center">
@@ -179,10 +179,10 @@ const Navbar = ({ locale }: { locale: string }) => {
                         <Link href={`/${locale}/news`}>{tNews("News")}</Link>
                       </button>
                       <button className="text-left hover:text-black">
-                        <Link href={`/${locale}/`}>{tNews("Photo")}</Link>
+                        <Link href={`/${locale}/photo`}>{tNews("Photo")}</Link>
                       </button>
                       <button className="text-left hover:text-black">
-                        <Link href={`/${locale}/`}>{tNews("Video")}</Link>
+                        <Link href={`/${locale}/video`}>{tNews("Video")}</Link>
                       </button>
                     </div>
                   </motion.div>

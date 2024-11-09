@@ -7,8 +7,14 @@ import { useTranslations } from "next-intl";
 import fb from "../../assets/image/footer/fb-icon.png";
 import zalo from "../../assets/image/footer/zalo-icon.png";
 import p from "../../assets/image/contact/snap-image.png";
-import { fb_help, mail_help, map_help, phone_help, snap_help, zalo_help } from "@/lib/helpFunc";
-
+import {
+  fb_help,
+  mail_help,
+  map_help,
+  phone_help,
+  snap_help,
+  zalo_help,
+} from "@/lib/helpFunc";
 
 const Footer = () => {
   const t = useTranslations("Footer");
@@ -31,7 +37,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="hover:underline"
           >
-            Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước
+            {t("Address1")}
           </a>
         </div>
         <div>
@@ -96,7 +102,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-[12px] md:text-[14px] lg:text-[18px] xl:text-[20px] hover:underline"
             >
-              Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước
+              {t("Address1")}
             </a>
           </div>
           <div className="w-[50%]">

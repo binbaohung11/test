@@ -1,4 +1,4 @@
-import ListNews from "@/components/News/ListNews";
+import ListPhoto from "@/components/Photo/ListPhoto";
 import { DOMAIN_NAME, IMAGE_INTRO_SEO } from "@/lib/helpFunc";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
@@ -12,14 +12,14 @@ export async function generateMetadata({
   const baseUrl = DOMAIN_NAME;
   const canonicalUrl =
     params.locale === "vn"
-      ? `${baseUrl}/vn/our/certificate`
+      ? `${baseUrl}/vn/photo`
       : params.locale === "en"
-      ? `${baseUrl}/en/our/certificate`
+      ? `${baseUrl}/en/photo`
       : baseUrl;
 
   return {
-    title: "Tin tức - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
-    description: "Tin tức - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+    title: "Hình ảnh - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+    description: "Hình ảnh - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
     alternates: {
       canonical: canonicalUrl,
     },
@@ -29,9 +29,9 @@ export async function generateMetadata({
       nocache: false, // Không chặn lưu cache của công cụ tìm kiếm
     },
     openGraph: {
-      title: "Tin tức - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+      title: "Hình ảnh - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
       description:
-        "Tin tức - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+        "Hình ảnh - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
       url: canonicalUrl,
       type: "website",
       images: [
@@ -46,27 +46,27 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Tin tức - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+      title: "Hình ảnh - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
       description:
-        "Tin tức - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
+        "Hình ảnh - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước",
       images: IMAGE_INTRO_SEO,
     },
   };
 }
 
-const NewsPage = () => {
+const PhotoPage = () => {
   const t = useTranslations("Link");
 
   return (
     <div className="py-5 px-3 md:px-10 lg:px-20 xl:px-40 lg:py-20">
       <div className="pb-10 text-[20px] lg:text-[30px] font-mainB">
-        {t("News")}
+        {t("Photo")}
       </div>
       <div>
-        <ListNews />
+        <ListPhoto />
       </div>
     </div>
   );
 };
 
-export default NewsPage;
+export default PhotoPage;

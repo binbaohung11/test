@@ -14,7 +14,9 @@
     "ThanXC": "Than xà cừ",
     "ThanCF": "Than Cafe",
     "HatDieu": "Hạt điều rang muối",
-    "Coconut": "Dừa trái"
+    "Coconut": "Dừa trái",
+    "Photo": "Hình Ảnh",
+    "Video": "Video"
   },
 
   "Menu": {
@@ -286,6 +288,7 @@
   "Footer": {
     "Title": "CÔNG TY TNHH XUẤT NHẬP KHẨU CAO NGUYÊN BÌNH PHƯỚC",
     "Address": "ĐỊA CHỈ",
+    "Address1":"Ấp Thuận Hòa, Xã Thuận Lợi, Huyện Đồng Phú, Tỉnh Bình Phước",
     "Contact": "LIÊN HỆ",
     "Recruitment": "TUYỂN DỤNG",
     "News": "TIN TỨC",

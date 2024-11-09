@@ -14,7 +14,9 @@
     "ThanXC": "Coconut Husk Charcoal",
     "ThanCF": "Coffee Charcoal",
     "HatDieu": "Salted Roasted Cashew Nuts",
-    "Coconut": "Coconut Fruit"
+    "Coconut": "Coconut Fruit",
+    "Photo": "Photo",
+    "Video": "Video"
   },
 
   "Menu": {
@@ -284,6 +286,7 @@
   "Footer": {
     "Title": "Cao Nguyen Binh Phuoc Export-Import Co., Ltd.",
     "Address": "Address",
+    "Address1": "Thuan Hoa Hamlet, Thuan Loi Commune, Dong Phu District, Binh Phuoc Province",
     "Contact": "Contact",
     "Recruitment": "Recruitment",
     "News": "News",

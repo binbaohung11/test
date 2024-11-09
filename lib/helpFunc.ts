@@ -13,8 +13,7 @@ export const IMAGE_COCONUT_SEO =
   "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2Fdua-trai-xuat-khau-highlandbp.jpg?alt=media&token=f5b8d408-3116-4f45-8e50-8bce0942056a";
 
 export const fb_help = "https://www.facebook.com/caonguyenbp.coco";
-export const snap_help =
-  "https://api.whatsapp.com/send/?phone=0915430543&text&type=phone_number&app_absent=0";
+export const snap_help = "https://wa.me/0915430543";
 export const zalo_help = "https://zalo.me/0915430543";
 export const phone_help = "tel:0915430543";
 export const mail_help = "mailto:CAONGUYENBP.COCO@GMAIL.COM";

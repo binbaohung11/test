@@ -30,7 +30,7 @@ const ListNews = () => {
   const [newsData, setNewsData] = useState<NewsItem[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [lastDoc, setLastDoc] =
     useState<null | QueryDocumentSnapshot<DocumentData>>(null);
   const itemsPerPage = 6;
@@ -92,16 +92,16 @@ const ListNews = () => {
     fetchNews(currentPage);
   }, []);
 
-  console.log(newsData);
-
   return (
     <div>
       {loading ? (
-        <Spin tip="Loading..." /> // Show loading spinner while fetching data
+        <div className="flex justify-center items-center min-h-screen">
+          <Spin size="large" /> {/* Antd loading spinner */}
+        </div>
       ) : (
         <>
           {/* Display news items */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
             {newsData.map((news) => (
               <div key={news.id} className="w-full py-4">
                 <div className="flex justify-center md:block">
@@ -134,9 +134,8 @@ const ListNews = () => {
               </div> // Display relevant fields from editorData
             ))}
           </div>
-
           {/* Pagination controls from Ant Design */}
-          <div className="flex justify-center ">
+          <div className="w-full flex justify-center ">
             <Pagination
               current={currentPage}
               total={totalPages * itemsPerPage} // Total number of items

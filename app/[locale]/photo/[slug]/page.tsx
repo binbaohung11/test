@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebaseConfig";
 import { DOMAIN_NAME, IMAGE_INTRO_SEO } from "@/lib/helpFunc";
-import BlogDetail from "@/components/News/BlogDetail/BlogDetail";
 import { collection, query, where } from "firebase/firestore";
+import PhotoDetail from "@/components/Photo/PhotoDetail/PhotoDetail";
 
 // Modify the generateMetadata function to fetch the data based on the slug
 export async function generateMetadata({
@@ -15,32 +15,27 @@ export async function generateMetadata({
   const baseUrl = DOMAIN_NAME;
 
   // Initialize default values for the metadata
-  let title =
-    "Chứng Chỉ Chất Lượng - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước";
+  let title = "Hình Ảnh - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước";
   let description =
-    "CHÚNG TÔI CAM KẾT - Với khách hàng: Cung cấp, thỏa mãn các nhu cầu của khách hàng với chất lượng sản phẩm và dịch vụ tốt nhất. Là sự lựa chọn đáng tin cậy và hiệu quả cho khách hàng.";
+    "Hình Ảnh - Công ty TNHH Xuất nhập khẩu Cao Nguyên Bình Phước";
   let canonicalUrl = `${baseUrl}/vn/our/certificate`;
   let image = IMAGE_INTRO_SEO; // Default image if no specific one is found
-  let keywords = [
-    "chứng chỉ chất lượng",
-    "xuất nhập khẩu",
-    "Cao Nguyên Bình Phước",
-  ]; // Default keywords
+  let keywords = [""]; // Default keywords
 
   // Fetch blog data from Firestore based on slug
   try {
     const blogQuery = query(
-      collection(db, "editorData"),
+      collection(db, "imageData"),
       where("slug", "==", slug) // Search by slug field
     );
     const blogSnapshot = await getDocs(blogQuery);
 
     if (!blogSnapshot.empty) {
       const blogData = blogSnapshot.docs[0].data();
-      title = `${blogData.title} - Tin Tức` || title; // Set title from Firebase or default
+      title = `${blogData.title} - Hình Ảnh` || title; // Set title from Firebase or default
       description = blogData.description || description; // Set description from Firebase or default
       image = blogData.image || image; // Set image from Firebase or default
-      canonicalUrl = `${baseUrl}/${params.locale}/news/${slug}`; // Dynamic canonical URL based on slug
+      canonicalUrl = `${baseUrl}/${params.locale}/photo/${slug}`; // Dynamic canonical URL based on slug
       keywords = blogData.keywords || keywords; // Set keywords from Firebase or default
     } else {
       console.error("Blog not found");
@@ -85,13 +80,13 @@ export async function generateMetadata({
   };
 }
 
-const DetailBlog = ({ params }: { params: { slug: string } }) => {
+const PhotoDetailPage = ({ params }: { params: { slug: string } }) => {
   return (
     <div className="text-3xl font-mainB">
-      <BlogDetail params={params} /> {/* Pass the params to BlogDetail */}
+      <PhotoDetail params={params} /> {/* Pass the params to BlogDetail */}
       <div></div>
     </div>
   );
 };
 
-export default DetailBlog;
+export default PhotoDetailPage;

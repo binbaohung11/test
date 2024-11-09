@@ -48,7 +48,7 @@ const MyVideo = () => {
         setImageUrl(uploadedImageUrl);
       }
 
-      const docRef = await addDoc(collection(db, "imageData"), {
+      const docRef = await addDoc(collection(db, "videoData"), {
         title: title,
         description: description,
         keywords: keywords,
@@ -67,6 +67,7 @@ const MyVideo = () => {
 
   return (
     <div className="editor-container">
+       <h1 className="text-[30px] text-center py-5 font-mainB">Thêm Video Mới</h1>
       <div>
         <input
           type="text"

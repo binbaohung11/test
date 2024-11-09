@@ -88,6 +88,7 @@ const MyImage = () => {
 
   return (
     <div className="editor-container">
+      <h1 className="text-[30px] text-center py-5 font-mainB">Thêm Ảnh Mới</h1>
       <div>
         <input
           type="text"

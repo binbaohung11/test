@@ -6,6 +6,7 @@ import parse from "html-react-parser";
 import "../../../app/[locale]/news/[slug]/news.css";
 import PathLink from "@/components/Path/PathLink";
 import BlogOther from "../BlogOther";
+import { Spin } from "antd";
 
 // Define a Blog interface
 interface Blog {
@@ -44,7 +45,12 @@ const BlogDetail = ({ params }: { params: { slug: string } }) => {
     fetchBlogBySlug();
   }, [params.slug]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Spin size="large" />
+      </div>
+    );
   if (!blog) return <p>Blog post not found.</p>;
 
   // Function to add classes to specific elements

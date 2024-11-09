@@ -7,10 +7,13 @@ import search from "../../assets/icon_header/icon_search.png";
 import flag_vn from "../../assets/icon_header/icon_vn.png";
 import flag_uk from "../../assets/icon_header/icon_uk.png";
 import { usePathname, useRouter } from "next/navigation";
+import Find from "./Find";
 
 const Header = () => {
   const pathname = usePathname();
   const router = useRouter();
+
+
 
   const handleLanguageChange = (newLocale: string) => {
     const path = pathname.split("/").slice(2).join("/");
@@ -43,10 +46,7 @@ const Header = () => {
 
         <div className="w-[53%] bg-[#969696] flex justify-center items-center text-[#FFFFFF] space-x-10 max-md:w-[25%] max-md:space-x-0">
           <div className="relative flex items-center space-x-2 max-md:hidden">
-            <input
-              className="py-2 px-5 text-[18px] text-black w-[440px] rounded-[34px] max-md:w-[200px] max-lg:w-[200px] max-xl:w-[250px] max-2xl:w-[300px] max-xl:py-0 max-2xl:py-1 max-md:text-[10px] max-lg:text-[12px] max-xl:text-[14px] max-2xl:text-[16px]"
-              placeholder="search" // Optional: Add a placeholder from translations
-            />
+            <Find />
             <div className="absolute right-5 max-xl:right-2 max-2xl:right-3">
               <Image
                 src={search}

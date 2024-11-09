@@ -118,9 +118,24 @@ const PathLink = () => {
     );
   }
 
+  const isVideoPath = normalizedPath.startsWith("[locale]/video/");
+  if (isVideoPath) {
+    breadcrumbs["[locale]/video/..."] = (
+      <div className="text-[12px] md:text-[16px] ">
+        <span className="text-[#969696] hover:text-black">
+          <Link href={`/${locale}`}>{t("Home")} </Link> {">"}
+        </span>
+        <span className="text-black">
+          <Link href={`/${locale}/news`}> {t("Video")}</Link>
+        </span>
+      </div>
+    );
+  }
+
   const breadcrumb =
     breadcrumbs[normalizedPath] ||
     breadcrumbs["[locale]/news/..."] ||
+    breadcrumbs["[locale]/video/..."] ||
     "Đường dẫn không xác định";
 
   return <div>{breadcrumb}</div>;
