@@ -12,7 +12,7 @@ import Head from "next/head";
 
 export default function Home() {
   return (
-    <>
+    <div className="font-mainR">
       <Head>
         <link rel="shortcut icon" href="../favicon.ico" />
         <link
@@ -50,6 +50,6 @@ export default function Home() {
 
         <News />
       </div>
-    </>
+    </div>
   );
 }

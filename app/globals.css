@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: "OSBold";
-  src: url("./fonts/OpenSans-Bold.ttf") format("truetype");
+  src: url("./fonts/Montserrat-Bold.otf") format("truetype");
 }
 
 @font-face {
   font-family: "RBRegular";
-  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+  src: url("./fonts/Montserrat-Regular.otf") format("truetype");
 }
 
 body {
@@ -47,7 +47,6 @@ body {
 }
 
 .scrollbar-hidden {
-  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
-  scrollbar-width: none;     /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
 }
-

@@ -8,7 +8,6 @@ import infras2 from "../../../assets/image/our/introduction/infras-image-2.jpg";
 import infras3 from "../../../assets/image/our/introduction/infras-image-3.jpg";
 import infras4 from "../../../assets/image/our/introduction/infras-image-4.jpg";
 import infras5 from "../../../assets/image/our/introduction/infras-image-5.jpg";
-import infras6 from "../../../assets/image/our/introduction/infras-image-6.jpg";
 import infras7 from "../../../assets/image/our/introduction/infras-image-7.jpg";
 
 import "swiper/css";
@@ -21,7 +20,6 @@ const Infrastructure = () => {
     { image: infras3, title: "Hình 3" },
     { image: infras4, title: "Hình 4" },
     { image: infras5, title: "Hình 5" },
-    { image: infras6, title: "Hình 6" },
     { image: infras7, title: "Hình 7" },
   ];
   return (
