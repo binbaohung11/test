@@ -98,8 +98,8 @@
   "Our-Intro": {
     "CompanyProfile": "SƠ LƯỢC VỀ CÔNG TY",
     "IntroBold": "Công ty TNHH XNK Cao Nguyên Bình Phước",
-    "Intro1": " Được thành lập ngày 27/02/2019, Giấy đăng ký kinh doanh số: 3801195652 Sở kế hoạch và đầu tư Bình phước cấp. Vốn điều lệ 10,5 tỷ đồng.",
-    "Intro2": "Công ty tọa lạc tại : Ấp Thuận hòa 2- Xã Thuận lợi- Huyện Đồng phú- Tỉnh bình phước trên diện tích mặt bằng 11.000 m2 ngay tuyến tỉnh lộ 741 rất thuận tiện cho giao thông.",
+    "Intro1": " Được thành lập ngày 27/02/2019, Giấy đăng ký kinh doanh số: 3801195652 Sở kế hoạch và đầu tư Bình phước cấp. Vốn điều lệ 20 tỷ đồng.",
+    "Intro2": "Địa Chỉ: Ấp Thuận hòa 2- Xã Thuận lợi- Huyện Đồng phú- Tỉnh bình phước trên diện tích mặt bằng 17.000 m2 ngay tuyến tỉnh lộ 741 rất thuận tiện cho giao thông.",
     "Intro3": "Chúng tôi tận dụng nguồn nguyên liệu sẵn có tại Việt Nam đó là Gáo dừa khô để sản xuất than gáo dừa - loại than tự nhiên có khả năng sinh nhiệt cực tốt và không chứa các thành phần khí độc hại tới sức khỏe con người.",
     "Intro4": "Để cho ra đời sản phẩm, quy trình sản xuất THAN GÁO DỪA cũng rất nghiêm ngặt từ khâu nguyên liệu, cho đến việc đốt, hoạt hóa bằng nhiều tác nhân lý hóa theo công nghệ hiện đại. Trong quá trình đốt trong điều kiệm hiếu khí (thiếu khí oxi) sẽ tiêu diệt lượng khói thải, không sinh ra mùi đó là ưu điểm của than gáo dừa so với các loại chất đốt khác.",
     "Intro5Bold": "Sản phẩm than gáo dừa rất được ưa chuộng trên thị trường bởi những ưu điểm:",
@@ -157,6 +157,7 @@
   },
 
   "Product-Detail": {
+    "Product": "HÌNH ẢNH SẢN PHẨM",
     "Same": "Kích thước phong phú",
     "Same1": "Than Gáo Dừa Vuông được HIGLANDBP sản xuất với nhiều kích thước phù phợp với nhiều mục đích khác nhau của khách hàng.",
     "Same2": "ĐẶC ĐIỂM THAN GÁO DỪA",
@@ -297,8 +298,8 @@
     "Email": "Email",
     "Email1": "Nhập Email",
     "Description": "Nội Dung",
-    "Description1":"Nhập nội dung",
-    "Send":"Gửi"
+    "Description1": "Nhập nội dung",
+    "Send": "Gửi"
   },
 
   "Footer": {

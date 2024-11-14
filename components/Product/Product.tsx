@@ -67,7 +67,7 @@ const Product = () => {
       </div>
 
       <h2 className="py-5 lg:mt-20  text-[14px] md:text-[24px] lg:text-[34px] xl:text-[40px] font-mainB">
-        HÌNH ẢNH SẢN PHẨM
+        {t("Product")}
       </h2>
       <div className="lg:hidden">
         <Swiper
