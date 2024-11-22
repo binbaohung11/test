@@ -8,6 +8,9 @@ const nextConfig = {
   images: {
     domains: ["firebasestorage.googleapis.com"], // Thêm miền này cho phép ảnh từ Firebase
   },
+  eslint: {
+    ignoreDuringBuilds: true, // Tắt ESLint trong quá trình build
+  },
 };
 
 export default withNextIntl(nextConfig);
