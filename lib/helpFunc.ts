@@ -1,4 +1,4 @@
-export const DOMAIN_NAME = "https://yours-domain.com";
+export const DOMAIN_NAME = "https://highlandbp.com.vn/";
 
 export const IMAGE_HOME_SEO =
   "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2Fthan-cube-z.jpg?alt=media&token=42b504b3-c984-4450-9a88-548c5bc99579";
