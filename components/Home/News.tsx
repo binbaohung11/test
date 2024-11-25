@@ -34,8 +34,6 @@ const News: React.FC = () => {
 
   const t = useTranslations("Home");
 
-  console.log(editorData);
-
   useEffect(() => {
     const fetchData = async () => {
       try {

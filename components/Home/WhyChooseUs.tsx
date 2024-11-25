@@ -27,8 +27,6 @@ const WhyChooseUs = () => {
     },
   ];
 
-  console.log(data);
-
   return (
     <>
       {/* mobile */}
