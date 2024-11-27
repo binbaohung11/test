@@ -7,7 +7,9 @@ import "../../app/[locale]/news/[slug]/news.css";
 const Recruitment = () => {
   const [recruitment, setRecruitment] = useState<any | null>(null);
   const db = getFirestore();
-  const documentId = "Va1xvFuDzQrr4uVt3cn8";
+  const documentId = "B0LDDeOlww7kLtU58EHF";
+
+  console.log(recruitment);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,9 +48,10 @@ const Recruitment = () => {
       // Corrected regex and replacement for YouTube embeds
       .replace(
         /<figure class="(media|image)"> <oembed url="(.*?)"><\/oembed><\/figure>/g,
-        `<iframe width="560" height="315" src="$2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"   
+        `<iframe  width="560" height="315" src="$2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"   
    allowfullscreen></iframe>`
-      );
+      )
+      .replace(/<img /g, '<img class="rounded-lg mx-auto my-4 border" ');
 
     return transformedHtml;
   };
