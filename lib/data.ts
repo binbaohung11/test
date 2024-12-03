@@ -4,16 +4,44 @@ import cubeImage3 from "../assets/image/product/cube/cube-image-3.jpg";
 import cubeImage4 from "../assets/image/product/cube/cube-image-4.jpg";
 import cubeImage5 from "../assets/image/product/cube/cube-image-5.jpg";
 import cubeImage6 from "../assets/image/product/cube/cube-image-6.jpg";
+import cubeImage7 from "../assets/image/product/cube/cube-image-7.jpg";
+import cubeImage8 from "../assets/image/product/cube/cube-image-8.jpg";
+import cubeImage9 from "../assets/image/product/cube/cube-image-9.jpg";
+import cubeImage10 from "../assets/image/product/cube/cube-image-10.jpg";
+import cubeImage11 from "../assets/image/product/cube/cube-image-11.jpg";
+import cubeImage12 from "../assets/image/product/cube/cube-image-12.jpg";
+import cubeImage13 from "../assets/image/product/cube/cube-image-13.jpg";
+import cubeImage14 from "../assets/image/product/cube/cube-image-14.jpg";
+import cubeImage15 from "../assets/image/product/cube/cube-image-15.jpg";
+import cubeImage16 from "../assets/image/product/cube/cube-image-16.jpg";
+import cubeImage17 from "../assets/image/product/cube/cube-image-17.jpg";
+import cubeImage18 from "../assets/image/product/cube/cube-image-18.jpg";
 import cubeImagez from "../assets/image/product/cube/than-cube-z.jpg";
 
 import stick2x4 from "../assets/image/product/stick/STICK-2X4.jpg";
 import stick1x3 from "../assets/image/product/stick/STICK-1.8X3.5.jpg";
 import stick from "../assets/image/product/stick/stick.jpg";
+import stick1 from "../assets/image/product/stick/stick-8.jpg";
+import stick2 from "../assets/image/product/stick/stick-1.jpg";
+import stick3 from "../assets/image/product/stick/stick-2.jpg";
+import stick4 from "../assets/image/product/stick/stick-3.jpg";
+import stick5 from "../assets/image/product/stick/stick-4.jpg";
+import stick6 from "../assets/image/product/stick/stick-5.jpg";
+import stick7 from "../assets/image/product/stick/stick-6.jpg";
+import stick8 from "../assets/image/product/stick/stick-7.jpg";
 
 import hexagon2x4 from "../assets/image/product/hexogon/HEXAGON-2X4.jpg";
 import hexagon25x4 from "../assets/image/product/hexogon/hexagon-2.5x4.jpg";
 import hexagon1 from "../assets/image/product/hexogon/HEXAGON-1.jpg";
 import hexagon2 from "../assets/image/product/hexogon/HEXAGON-2.jpg";
+import hexagon3 from "../assets/image/product/hexogon/HEXAGON-3.jpg";
+import hexagon4 from "../assets/image/product/hexogon/HEXAGON-4.jpg";
+import hexagon5 from "../assets/image/product/hexogon/HEXAGON-5.jpg";
+import hexagon6 from "../assets/image/product/hexogon/HEXAGON-6.jpg";
+import hexagon7 from "../assets/image/product/hexogon/HEXAGON-7.jpg";
+import hexagon8 from "../assets/image/product/hexogon/HEXAGON-8.jpg";
+import hexagon9 from "../assets/image/product/hexogon/HEXAGON-9.jpg";
+import hexagon10 from "../assets/image/product/hexogon/HEXAGON-10.jpg";
 
 import bbq4x5 from "../assets/image/product/bbq/coconut-charcoal-bbq-4x5.jpg";
 import bbq4x10 from "../assets/image/product/bbq/coconut-charcoal-bbq-4x10.jpg";
@@ -21,6 +49,13 @@ import bbq1 from "../assets/image/product/bbq/ThanBBQ1.jpg";
 import bbq2 from "../assets/image/product/bbq/ThanBBQ2.jpg";
 import bbq3 from "../assets/image/product/bbq/ThanBBQ3.jpg";
 import bbq4 from "../assets/image/product/bbq/ThanBBQ4.jpg";
+import bbq5 from "../assets/image/product/bbq/bbq-1.jpg";
+import bbq6 from "../assets/image/product/bbq/bbq-2.jpg";
+import bbq7 from "../assets/image/product/bbq/bbq-3.jpg";
+import bbq8 from "../assets/image/product/bbq/bbq-4.jpg";
+import bbq9 from "../assets/image/product/bbq/bbq-5.jpg";
+import bbq10 from "../assets/image/product/bbq/bbq-6.jpg";
+import bbq11 from "../assets/image/product/bbq/bbq-7.jpg";
 
 import material1 from "../assets/image/product/Material/coconut-shell-charcoal-1-1536x1152.jpg";
 import material2 from "../assets/image/product/Material/than-dua-nguyen-lieu.png";
@@ -48,6 +83,18 @@ export const getProductData = (t: TranslationFunction) => [
       { image: cubeImage4, title: "Cube - (2.0x2.0x1.8)cm" },
       { image: cubeImage5, title: "Cube" },
       { image: cubeImage6, title: "Cube" },
+      { image: cubeImage7, title: "Cube" },
+      { image: cubeImage8, title: "Cube" },
+      { image: cubeImage9, title: "Cube" },
+      { image: cubeImage10, title: "Cube" },
+      { image: cubeImage11, title: "Cube" },
+      { image: cubeImage12, title: "Cube" },
+      { image: cubeImage13, title: "Cube" },
+      { image: cubeImage14, title: "Cube" },
+      { image: cubeImage15, title: "Cube" },
+      { image: cubeImage16, title: "Cube" },
+      { image: cubeImage17, title: "Cube" },
+      { image: cubeImage18, title: "Cube" },
     ],
     imagez: cubeImagez,
   },
@@ -64,6 +111,14 @@ export const getProductData = (t: TranslationFunction) => [
       { image: stick2x4, title: "Stick - (2x4)cm" },
       { image: stick1x3, title: "Stick - (1.8x3.5)cm" },
       { image: stick, title: "stick" },
+      { image: stick1, title: "stick" },
+      { image: stick2, title: "stick" },
+      { image: stick3, title: "stick" },
+      { image: stick4, title: "stick" },
+      { image: stick5, title: "stick" },
+      { image: stick6, title: "stick" },
+      { image: stick7, title: "stick" },
+      { image: stick8, title: "stick" },
     ],
     imagez: cubeImagez,
   },
@@ -81,6 +136,14 @@ export const getProductData = (t: TranslationFunction) => [
       { image: hexagon25x4, title: "Hexagon - (2.5x4)cm" },
       { image: hexagon1, title: "Hexagon " },
       { image: hexagon2, title: "Hexagon" },
+      { image: hexagon3, title: "Hexagon " },
+      { image: hexagon4, title: "Hexagon" },
+      { image: hexagon5, title: "Hexagon " },
+      { image: hexagon6, title: "Hexagon" },
+      { image: hexagon7, title: "Hexagon " },
+      { image: hexagon8, title: "Hexagon" },
+      { image: hexagon9, title: "Hexagon " },
+      { image: hexagon10, title: "Hexagon" },
     ],
     imagez: cubeImagez,
   },
@@ -100,6 +163,13 @@ export const getProductData = (t: TranslationFunction) => [
       { image: bbq2, title: "BBQ" },
       { image: bbq3, title: "BBQ" },
       { image: bbq4, title: "BBQ" },
+      { image: bbq5, title: "BBQ" },
+      { image: bbq6, title: "BBQ" },
+      { image: bbq7, title: "BBQ" },
+      { image: bbq8, title: "BBQ" },
+      { image: bbq9, title: "BBQ" },
+      { image: bbq10, title: "BBQ" },
+      { image: bbq11, title: "BBQ" },
     ],
     imagez: cubeImagez,
   },
