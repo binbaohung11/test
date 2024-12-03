@@ -11,7 +11,7 @@ import infras5 from "../../../assets/image/our/introduction/infras-image-5.jpg";
 import infras7 from "../../../assets/image/our/introduction/infras-image-7.jpg";
 import infras9 from "../../../assets/image/our/introduction/DJI_0988 2.jpg";
 import infras10 from "../../../assets/image/our/introduction/DJI_0999 2.jpg";
-import infras11 from "../../../assets/image/our/introduction/P1025496 2.jpg";
+import infras11 from "../../../assets/image/our/introduction/P102549602.jpg";
 import infras12 from "../../../assets/image/our/introduction/P1025560 2.jpg";
 import infras13 from "../../../assets/image/our/introduction/P1025613 2.jpg";
 import infras14 from "../../../assets/image/our/introduction/P1025697 2.jpg";
