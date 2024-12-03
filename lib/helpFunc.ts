@@ -1,16 +1,16 @@
 export const DOMAIN_NAME = "https://highlandbp.com.vn";
 
 export const IMAGE_HOME_SEO =
-  "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2Fthan-cube-z.jpg?alt=media&token=42b504b3-c984-4450-9a88-548c5bc99579";
+  "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/web-app-manifest-512x512.png?alt=media&token=a546ec82-060d-4a1b-8fd7-c7db75e3eb9e";
 
 export const IMAGE_INTRO_SEO =
-  "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2Fintro-image-1.png?alt=media&token=5a7a5dc1-99e6-4ead-82cb-46430468fd69";
+  "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/intro-image-1.png?alt=media&token=8e1ff424-d09f-4366-a492-0dbddd4e3b9a";
 
 export const IMAGE_CASHEW_SEO =
-  "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2Fhat-dieu-rang-muoi.jpg?alt=media&token=af8fdd9c-bce5-4d42-8073-9779aee3dfa1";
+  "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/hat-dieu-rang-muoi.jpg?alt=media&token=5eb99a67-d7d2-435a-b543-b663f128dde8";
 
 export const IMAGE_COCONUT_SEO =
-  "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2Fdua-trai-xuat-khau-highlandbp.jpg?alt=media&token=f5b8d408-3116-4f45-8e50-8bce0942056a";
+  "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/dua-trai-xuat-khau-highlandbp.jpg?alt=media&token=003d609e-fa4b-4e52-be2b-f0680ece1c18";
 
 export const fb_help = "https://www.facebook.com/caonguyenbp.coco";
 export const snap_help = "https://wa.me/0915430543";

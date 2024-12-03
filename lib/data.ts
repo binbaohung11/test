@@ -35,7 +35,7 @@ export const getProductData = (t: TranslationFunction) => [
   {
     link: "coconut-charcoal-cube",
     linkImage:
-      "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2FShisha-Coconut-Charcoal-Cube.png?alt=media&token=02e0c263-1098-405a-b850-43fc72e99e40",
+      "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/Shisha-Coconut-Charcoal-Cube.png?alt=media&token=1a82d6c2-17b0-43ee-bda7-4d6aa86fa815",
     title: t("ThanVuong"),
     intro1: t("ThanVuong1"),
     intro2: t("ThanVuong2"),
@@ -54,7 +54,7 @@ export const getProductData = (t: TranslationFunction) => [
   {
     link: "coconut-charcoal-stick",
     linkImage:
-      "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2FShisha-Round-Charcoal.png?alt=media&token=ec85049d-f736-410a-b6c9-c0cedf30cdfe",
+      "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/Shisha-Round-Charcoal.png?alt=media&token=ba133123-ad89-4eda-a60c-5220af8fca48",
     title: t("ThanQue"),
     intro1: t("ThanQue1"),
     intro2: t("ThanQue2"),
@@ -70,7 +70,7 @@ export const getProductData = (t: TranslationFunction) => [
   {
     link: "coconut-charcoal-hexagonal",
     linkImage:
-      "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2Fthan-dua-hinh-luc-giac-768x480.png?alt=media&token=8fd0238b-24a1-43fb-ad13-65979c4d262c",
+      "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/than-dua-hinh-luc-giac-768x480.png?alt=media&token=bb630a0b-687b-4201-b7e7-d230166ecbb5",
     title: t("ThanLG"),
     intro1: t("ThanLG1"),
     intro2: t("ThanLG2"),
@@ -87,7 +87,7 @@ export const getProductData = (t: TranslationFunction) => [
   {
     link: "coconut-charcoal-bbq",
     linkImage:
-      "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2FBBQ-Hexal.png?alt=media&token=7c7dcc36-cb0a-4284-9f26-9b9de741bb31",
+      "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/BBQ-Hexal.png?alt=media&token=1470ce86-74dc-4c0e-8300-a0ad4b5efd4a",
     title: t("ThanBBQ"),
     intro1: t("ThanBBQ1"),
     intro2: t("ThanBBQ2"),
@@ -106,7 +106,7 @@ export const getProductData = (t: TranslationFunction) => [
   {
     link: "coconut-charcoal-material",
     linkImage:
-      "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2Fthan-dua-nguyen-lieu.png?alt=media&token=99be527d-08a0-4bd4-ae0b-b769bf5e90fe",
+      "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/than-dua-nguyen-lieu.png?alt=media&token=784a7a2c-6c94-40d4-a5f6-3a5293fdd3bc",
     title: t("ThanNL"),
     intro1: t("ThanNL1"),
     intro2: t("ThanNL2"),
@@ -121,7 +121,7 @@ export const getProductData = (t: TranslationFunction) => [
   {
     link: "charcoal-nacre",
     linkImage:
-      "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2FTHAN-XA-CU.jpg?alt=media&token=d090150e-5816-4fe0-9fac-685f296ccc7a",
+      "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/THAN-XA-CU.jpg?alt=media&token=33a074e0-f337-4278-93e2-6a9386925e18",
     title: t("ThanXC"),
     intro1: t("ThanXC1"),
     intro2: t("ThanXC2"),
@@ -133,7 +133,7 @@ export const getProductData = (t: TranslationFunction) => [
   {
     link: "charcoal-cafe",
     linkImage:
-      "https://firebasestorage.googleapis.com/v0/b/bphuoc-8a14d.appspot.com/o/images%2FTHAN-CAFE.jpg?alt=media&token=b1e6bbcc-698c-433e-857c-7b90fff7e7e3",
+      "https://firebasestorage.googleapis.com/v0/b/highlandbp-9a4d1.firebasestorage.app/o/THAN-CAFE.jpg?alt=media&token=1338b681-250f-46e6-bbcb-8fd90c4f3cce",
     title: t("ThanCF"),
     intro1: t("ThanCF1"),
     intro2: t("ThanCF2"),

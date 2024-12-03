@@ -58,7 +58,15 @@ const MyRecruitment = () => {
             setEditorData(editor.getData()); // Update state with editor content
           }}
           config={{
-            removePlugins: ["Table", "MediaEmbed"], // Disable the image plugin
+            removePlugins: [
+              "Table",
+              "MediaEmbed",
+              "EasyImage",
+              "ImageToolbar",
+              "ImageUpload",
+              "ImageCaption",
+              "ImageStyle",
+            ], // Disable the image plugin
           }}
         />
       </div>

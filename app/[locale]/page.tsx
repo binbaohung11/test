@@ -8,30 +8,24 @@ import Present from "@/components/Home/Present";
 import News from "@/components/Home/News";
 import Head from "next/head";
 
-
-
 export default function Home() {
   return (
     <div className="font-mainR">
       <Head>
-        <link rel="shortcut icon" href="../favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/images/apple-touch-icon.png"
+          href="/apple-touch-icon.png"
         />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/images/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/images/favicon-16x16.png"
-        />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <div className="flex flex-col z-0">
         <Welcome />

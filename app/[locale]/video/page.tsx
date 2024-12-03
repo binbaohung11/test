@@ -3,6 +3,7 @@ import { DOMAIN_NAME, IMAGE_INTRO_SEO } from "@/lib/helpFunc";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 
+
 export async function generateMetadata({
   params,
 }: {
