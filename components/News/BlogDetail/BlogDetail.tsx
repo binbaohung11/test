@@ -19,6 +19,7 @@ interface Blog {
 const BlogDetail = ({ params }: { params: { slug: string } }) => {
   const [blog, setBlog] = useState<Blog | null>(null); // Use Blog type or null
   const [loading, setLoading] = useState(true);
+  console.log(blog);
 
   useEffect(() => {
     const fetchBlogBySlug = async () => {
@@ -61,15 +62,18 @@ const BlogDetail = ({ params }: { params: { slug: string } }) => {
       .replace(/<ul>/g, '<ul class="list-disc pl-5">')
       .replace(/<ol>/g, '<ol class="list-decimal pl-5">')
       .replace(/<li>/g, '<li class="mb-2">')
+      .replace(/<p>/g, '<p class="my-2">')
       .replace(
         /<blockquote>/g,
         '<blockquote class="border-l-4 border-gray-400 pl-4 italic">'
       )
       // Corrected regex and replacement for YouTube embeds
       .replace(
-        /<figure class="(media|image)"> <oembed url="(.*?)"><\/oembed><\/figure>/g,
-        `<iframe width="560" height="315" src="$2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"   
-   allowfullscreen></iframe>`
+        /<figure.*?>\s*<oembed url="https:\/\/www\.youtube\.com\/watch\?v=(.*?)"><\/oembed>\s*<\/figure>/g,
+        `
+        <div class="flex justify-center items-center my-4">
+          <iframe width="600" height="315" src="https://www.youtube.com/embed/$1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>`
       );
 
     return transformedHtml;

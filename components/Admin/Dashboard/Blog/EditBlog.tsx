@@ -204,7 +204,7 @@ const EditBlog = ({ params }: { params: { editBlog: string } }) => {
           onChange={handleEditorChange}
           config={{
             extraPlugins: [uploadPlugin],
-            removePlugins: ["MediaEmbed", "Table"],
+            removePlugins: ["Table"],
             image: {
               toolbar: [
                 "imageTextAlternative",
