@@ -87,9 +87,8 @@ export async function generateMetadata({
 
 const DetailBlog = ({ params }: { params: { slug: string } }) => {
   return (
-    <div className="text-3xl font-mainB">
+    <div className=" font-mainB">
       <BlogDetail params={params} /> {/* Pass the params to BlogDetail */}
-      <div></div>
     </div>
   );
 };

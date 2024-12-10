@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import emptyImage from "../../assets/image/our/introduction/intro-image-1.png";
 import Image from "next/image";
-import vuongImage from "../../assets/image/our/introduction/intro-image-2.png";
+import vuongImage from "../../assets/image/our/introduction/intro-image-2.jpg";
 
 const MainProduct = () => {
   const t = useTranslations("Home");

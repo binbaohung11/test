@@ -19,7 +19,6 @@ interface Blog {
 const BlogDetail = ({ params }: { params: { slug: string } }) => {
   const [blog, setBlog] = useState<Blog | null>(null); // Use Blog type or null
   const [loading, setLoading] = useState(true);
-  console.log(blog);
 
   useEffect(() => {
     const fetchBlogBySlug = async () => {

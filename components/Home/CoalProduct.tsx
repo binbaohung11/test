@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import cube from "../../assets/image/product/cube/cube-image-1.jpg";
 import stick from "../../assets/image/product/stick/STICK-1.8X3.5.jpg";
 import bbq from "../../assets/image/product/bbq/coconut-charcoal-bbq-4x10.jpg";
@@ -15,6 +15,7 @@ import xc from "../../assets/image/product/other/THAN-XA-CU.jpg";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/navigation"; // Import CSS cho nút điều hướng
 import Link from "next/link";
 
 const CoalProduct = () => {
@@ -71,11 +72,12 @@ const CoalProduct = () => {
           spaceBetween={10}
           slidesPerView={2}
           loop={true}
-          modules={[Autoplay]} // Thêm modules vào đây
+          modules={[Autoplay, Navigation]} // Thêm modules vào đây
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
+          navigation
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
@@ -101,11 +103,12 @@ const CoalProduct = () => {
           spaceBetween={30}
           slidesPerView={3}
           loop={true}
-          modules={[Autoplay]} // Thêm modules vào đây
+          modules={[Autoplay, Navigation]} // Thêm modules vào đây
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
+          navigation
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>
@@ -130,11 +133,12 @@ const CoalProduct = () => {
           spaceBetween={30}
           slidesPerView={4}
           loop={true}
-          modules={[Autoplay]} // Thêm modules vào đây
+          modules={[Autoplay, Navigation]} // Thêm modules vào đây
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
+          navigation
         >
           {data.map((item, index) => (
             <SwiperSlide key={index}>

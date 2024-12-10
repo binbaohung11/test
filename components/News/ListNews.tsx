@@ -110,7 +110,7 @@ const ListNews = () => {
                     alt={news.title}
                     width={1000} // Set the width explicitly
                     height={1000} // Set the height explicitly
-                    className="w-[400px] max-h-[200px]  xl:w-[600px] xl:max-h-[380px] rounded-[10px]"
+                    className="w-[400px] max-h-[200px]  xl:w-[600px] xl:max-h-[300px] rounded-[10px]"
                   />
                 </div>
                 <div className="text-[16px] md:text-[20px] xl:text-[24px] font-mainB w-full md:w-[85%] xl:w-[80%] text-center md:text-start md:px-2">

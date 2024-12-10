@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: "OSBold";
-  src: url("./fonts/Montserrat-Bold.otf") format("truetype");
+  src: url("./fonts/Lora-BoldItalic.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "RBRegular";
-  src: url("./fonts/Montserrat-Regular.otf") format("truetype");
+  src: url("./fonts/Lora-Regular.ttf") format("truetype");
 }
 
 body {
@@ -49,4 +49,30 @@ body {
 .scrollbar-hidden {
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
   scrollbar-width: none; /* For Firefox */
+}
+
+/* Tệp CSS của bạn */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important; /* Thêm !important để ghi đè */
+  padding: 5px;
+  margin-bottom: 40px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #000000 !important; /* Đổi màu khi hover */
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 35px !important;
+}
+
+@media (max-width: 768px) {
+  /* Điều chỉnh 768px theo kích thước mong muốn */
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 20px !important;
+  }
 }

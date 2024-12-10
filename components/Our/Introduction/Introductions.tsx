@@ -1,6 +1,6 @@
 import {useTranslations} from "next-intl";
 import intro1 from "../../../assets/image/our/introduction/intro-image-1.png";
-import intro2 from "../../../assets/image/our/introduction/intro-image-2.png";
+import intro2 from "../../../assets/image/our/introduction/intro-image-2.jpg";
 import intro3 from "../../../assets/image/our/introduction/intro-image-3.jpg";
 import Image from "next/image";
 

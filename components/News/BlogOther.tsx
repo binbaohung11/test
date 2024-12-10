@@ -118,7 +118,7 @@ const BlogOther: React.FC = () => {
               <p className="text-[12px] lg:text-[16px] text-[#969696] px-2">
                 {new Date(item.createdAt.seconds * 1000).toLocaleDateString()}
               </p>
-              <div className="text-[20px] lg:text-[24px] px-2 font-mainB">
+              <div className="text-[14px] lg:text-[20px] px-2 font-mainB">
                 {item.title}
               </div>
             </Link>
