@@ -15,6 +15,7 @@ interface EditorData {
   imageUrl: string;
   url: string;
   slug: string;
+  createdAt?: { seconds: number };
 }
 
 interface ImageData {
@@ -23,6 +24,7 @@ interface ImageData {
   imageUrl: string;
   url: string;
   slug: string;
+  createdAt?: { seconds: number };
 }
 
 interface VideoData {
@@ -31,6 +33,7 @@ interface VideoData {
   imageUrl: string;
   url: string;
   slug: string;
+  createdAt?: { seconds: number };
 }
 
 // Define the type for the combined result
@@ -82,6 +85,7 @@ const Find = () => {
           type: t("News"),
           url: `/${locale}/news`,
           slug: doc.data().slug,
+          createdAt: doc.data().createdAt,
         }))
         .filter((item) => item.title.includes(lowerCaseTerm)); // Filter by search term
 
@@ -93,6 +97,7 @@ const Find = () => {
           type: t("Photo"),
           url: `/${locale}/photo`,
           slug: doc.data().slug,
+          createdAt: doc.data().createdAt,
         }))
         .filter((item) => item.title.includes(lowerCaseTerm)); // Filter by search term
 
@@ -104,6 +109,7 @@ const Find = () => {
           type: t("Video"),
           url: `/${locale}/video`,
           slug: doc.data().slug,
+          createdAt: doc.data().createdAt,
         }))
         .filter((item) => item.title.includes(lowerCaseTerm)); // Filter by search term
 
@@ -170,7 +176,7 @@ const Find = () => {
       ) : (
         isDropdownVisible &&
         (results.length > 0 ? (
-          <div className="absolute top-12 h-[400px] z-50 text-black bg-white w-full overflow-y-auto rounded-[10px] shadow-xl">
+          <div className="absolute top-12 h-[400px] w-[550px] z-50 text-black bg-white overflow-y-auto rounded-[10px] shadow-xl">
             {results.map((item) => (
               <Link key={item.id} href={`${item.url}/${item.slug}`}>
                 <div className="p-4 hover:bg-gray-700 hover:text-white cursor-pointer flex items-center space-x-5">
@@ -181,12 +187,20 @@ const Find = () => {
                     height={1000}
                     className="w-[25px] h-[25px] lg:w-[35px] lg:h-[35px] xl:w-[45px] xl:h-[45px] rounded-full"
                   />
-                  <div className="w-[50%]">
+                  <div className="w-[70%]">
                     <p className="font-mainB text-[12px] lg:text-[12px] xl:text-[17px] 2xl:text-[20px]">
                       {item.title}
                     </p>
                     <p className="text-[10px] lg:text-[10px] xl:text-[12px] text-gray-500">
-                      20/1/2020
+                      {item.createdAt
+                        ? `${new Date(
+                            item.createdAt.seconds * 1000
+                          ).toLocaleDateString([], {
+                            day: "2-digit",
+                            month: "2-digit",
+                            year: "numeric",
+                          })}`
+                        : ""}
                     </p>
                   </div>
                   <div className="text-right text-[10px] lg:text-[12px] xl:text-[14px]">

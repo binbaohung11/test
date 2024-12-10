@@ -321,5 +321,10 @@
     "Recruitment": "Recruitment",
     "News": "News",
     "Connect": "Connect With Us"
-  }
+  },
+
+  "Profile": {
+  "DetailBROCHURE": "Brochure Information",
+  "DetailPROFILE": "Profile Information"
+}
 }

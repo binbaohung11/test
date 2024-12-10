@@ -322,5 +322,9 @@
     "Recruitment": "TUYỂN DỤNG",
     "News": "TIN TỨC",
     "Connect": "Kết Nối Với Chúng Tôi"
+  },
+  "Profile": {
+    "DetailBROCHURE": "Thông Tin Brochure",
+    "DetailPROFILE": "Thông Tin Profile"
   }
 }

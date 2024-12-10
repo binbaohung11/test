@@ -15,6 +15,7 @@ interface EditorData {
   imageUrl: string;
   url: string;
   slug: string;
+  createdAt?: { seconds: number };
 }
 
 interface ImageData {
@@ -23,6 +24,7 @@ interface ImageData {
   imageUrl: string;
   url: string;
   slug: string;
+  createdAt?: { seconds: number };
 }
 
 interface VideoData {
@@ -31,6 +33,7 @@ interface VideoData {
   imageUrl: string;
   url: string;
   slug: string;
+  createdAt?: { seconds: number };
 }
 
 // Define the type for the combined result
@@ -82,6 +85,7 @@ const FindMenu = () => {
           type: t("News"),
           url: `/${locale}/news`,
           slug: doc.data().slug,
+          createdAt: doc.data().createdAt,
         }))
         .filter((item) => item.title.includes(lowerCaseTerm)); // Filter by search term
 
@@ -93,6 +97,7 @@ const FindMenu = () => {
           type: t("Photo"),
           url: `/${locale}/photo`,
           slug: doc.data().slug,
+          createdAt: doc.data().createdAt,
         }))
         .filter((item) => item.title.includes(lowerCaseTerm)); // Filter by search term
 
@@ -104,6 +109,7 @@ const FindMenu = () => {
           type: t("Video"),
           url: `/${locale}/video`,
           slug: doc.data().slug,
+          createdAt: doc.data().createdAt,
         }))
         .filter((item) => item.title.includes(lowerCaseTerm)); // Filter by search term
 
@@ -182,11 +188,17 @@ const FindMenu = () => {
                     className="w-[25px] h-[25px] lg:w-[35px] lg:h-[35px] xl:w-[45px] xl:h-[45px] rounded-full"
                   />
                   <div className="">
-                    <p className="font-mainB text-[12px] ">
-                      {item.title}
-                    </p>
+                    <p className="font-mainB text-[12px] ">{item.title}</p>
                     <p className="text-[10px]  lg:text-[10px] xl:text-[12px] text-gray-500">
-                      20/1/2020
+                      {item.createdAt
+                        ? `${new Date(
+                            item.createdAt.seconds * 1000
+                          ).toLocaleDateString([], {
+                            day: "2-digit",
+                            month: "2-digit",
+                            year: "numeric",
+                          })}`
+                        : ""}
                     </p>
                   </div>
                 </div>

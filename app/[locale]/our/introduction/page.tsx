@@ -2,6 +2,7 @@ import Infrastructure from "@/components/Our/Introduction/Infrastructure";
 import Introductions from "@/components/Our/Introduction/Introductions";
 import Materials from "@/components/Our/Introduction/Materials";
 import Product from "@/components/Our/Introduction/Product";
+import ProfileAndBrochure from "@/components/Our/Introduction/ProfileAndBrochure";
 import Structure from "@/components/Our/Introduction/Structure";
 import PathLink from "@/components/Path/PathLink";
 import { DOMAIN_NAME, IMAGE_INTRO_SEO } from "@/lib/helpFunc";
@@ -82,6 +83,9 @@ const Introduction = () => {
         </div>
         <div>
           <Materials />
+        </div>
+        <div>
+          <ProfileAndBrochure />
         </div>
       </div>
     </>
