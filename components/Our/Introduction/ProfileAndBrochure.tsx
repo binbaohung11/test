@@ -17,7 +17,7 @@ const ProfileAndBrochure = () => {
           {/* Bọc Viewer trong một div để kiểm soát kích thước */}
           <div
             style={{ margin: "0 auto" }}
-            className="h-screen w-full md:w-[70%]"
+            className="h-screen w-full md:w-[80%]"
           >
             <Viewer fileUrl="/BROCHURE.pdf" />
           </div>
@@ -31,7 +31,7 @@ const ProfileAndBrochure = () => {
           {/* Bọc Viewer trong một div để kiểm soát kích thước */}
           <div
             style={{ margin: "0 auto" }}
-            className="h-screen w-full md:w-[70%]"
+            className="h-screen w-full md:w-[80%]"
           >
             <Viewer fileUrl="/PROFILE.pdf" />
           </div>
