@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "@/lib/firebaseConfig";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import slugify from "slugify";
 import "../../../../app/admin/create/createBlog.css";
+import { toast } from "react-toastify";
 
 const MyVideo = () => {
   const [title, setTitle] = useState("");
@@ -13,6 +14,7 @@ const MyVideo = () => {
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState("");
   const [youtubeLink, setYoutubeLink] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const db = getFirestore();
 
   const generateSlug = (title: string) => {
@@ -39,6 +41,7 @@ const MyVideo = () => {
   };
 
   const handleSave = async () => {
+    setIsLoading(true);
     try {
       const slug = generateSlug(title);
       let uploadedImageUrl = imageUrl;
@@ -58,16 +61,19 @@ const MyVideo = () => {
         createdAt: new Date(),
       });
       console.log("Document written with ID: ", docRef.id);
-      alert("Data saved successfully!");
+      toast.success("Video đã được lưu thành công!");
     } catch (e) {
       console.error("Error adding document: ", e);
       alert("Error saving data!");
     }
+    setIsLoading(false);
   };
 
   return (
     <div className="editor-container">
-       <h1 className="text-[30px] text-center py-5 font-mainB">Thêm Video Mới</h1>
+      <h1 className="text-[30px] text-center py-5 font-mainB">
+        Thêm Video Mới
+      </h1>
       <div>
         <input
           type="text"
@@ -109,7 +115,7 @@ const MyVideo = () => {
       </div>
 
       <button onClick={handleSave} className="save-button">
-        Save
+        {isLoading ? "Đang tải..." : "Lưu Video"}
       </button>
     </div>
   );

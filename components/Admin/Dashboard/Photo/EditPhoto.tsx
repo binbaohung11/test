@@ -1,12 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { storage } from "@/lib/firebaseConfig";
-import { doc, updateDoc, getDoc } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { db, storage } from "@/lib/firebaseConfig";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import slugify from "slugify";
 import "../../../../app/admin/create/createBlog.css";
-import { db } from "@/lib/firebaseConfig";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const EditPhoto = ({ params }: { params: { editImage: string } }) => {
   const [title, setTitle] = useState("");
@@ -15,6 +15,7 @@ const EditPhoto = ({ params }: { params: { editImage: string } }) => {
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState("");
   const [secondaryImages, setSecondaryImages] = useState<File[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { editImage } = params; // Get the blog post ID from the URL
 
@@ -58,11 +59,11 @@ const EditPhoto = ({ params }: { params: { editImage: string } }) => {
   };
 
   const handleSecondaryImagesChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     if (e.target.files) {
       const filesArray = Array.from(e.target.files);
-      if (filesArray.length > 10) {
+      if (filesArray.length > 25) {
         alert("Bạn chỉ có thể chọn tối đa 10 ảnh phụ.");
         e.target.value = ""; // Clear the file input
         setSecondaryImages([]); // Reset the secondary images array
@@ -80,6 +81,7 @@ const EditPhoto = ({ params }: { params: { editImage: string } }) => {
   };
 
   const handleSave = async () => {
+    setIsLoading(true);
     try {
       const slug = generateSlug(title);
       let uploadedImageUrl = imageUrl;
@@ -106,11 +108,12 @@ const EditPhoto = ({ params }: { params: { editImage: string } }) => {
         secondaryImageUrls: secondaryImageUrls, // Update secondary image URLs
       });
 
-      alert("Data updated successfully!");
+      toast.success("Cập nhật thành công!");
     } catch (e) {
       console.error("Error updating document: ", e);
       alert("Error saving data!");
     }
+    setIsLoading(false);
   };
 
   return (
@@ -163,7 +166,7 @@ const EditPhoto = ({ params }: { params: { editImage: string } }) => {
         </div>
       </div>
       <div>
-        <p className="text-[20px] pt-5">Ảnh Phụ (tối đa 10 ảnh)</p>
+        <p className="text-[20px] pt-5">Ảnh Phụ (tối đa 25 ảnh)</p>
         <input
           type="file"
           accept="image/*"
@@ -174,7 +177,7 @@ const EditPhoto = ({ params }: { params: { editImage: string } }) => {
       </div>
 
       <button onClick={handleSave} className="save-button">
-        Save
+        {isLoading ? "Đang Chỉnh Sửa..." : "Chỉnh Sửa"}
       </button>
     </div>
   );

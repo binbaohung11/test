@@ -1,14 +1,15 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "@/lib/firebaseConfig";
-import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 import slugify from "slugify";
 import "../../../../app/admin/create/createBlog.css"; // Import CSS
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const EditBlog = ({ params }: { params: { editBlog: string } }) => {
   const router = useRouter();
@@ -18,6 +19,7 @@ const EditBlog = ({ params }: { params: { editBlog: string } }) => {
   const [keywords, setKeywords] = useState("");
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState("");
+  const [loading, setLoading] = useState(false);
   const db = getFirestore();
   const { editBlog } = params; // Get the blog post ID from the URL
 
@@ -82,7 +84,7 @@ const EditBlog = ({ params }: { params: { editBlog: string } }) => {
             try {
               const file = readEvent.target?.result as ArrayBuffer;
               const fileName = `${Date.now()}-${Math.round(
-                Math.random() * 1e9
+                Math.random() * 1e9,
               )}.png`;
               const storageRef = ref(storage, fileName);
 
@@ -107,13 +109,14 @@ const EditBlog = ({ params }: { params: { editBlog: string } }) => {
 
   function uploadPlugin(editor: any) {
     editor.plugins.get("FileRepository").createUploadAdapter = (
-      loader: any
+      loader: any,
     ) => {
       return uploadAdapter(loader);
     };
   }
 
   const handleUpdate = async () => {
+    setLoading(true);
     try {
       const slug = generateSlug(title);
       let uploadedImageUrl = imageUrl; // Keep the existing image URL by default
@@ -136,16 +139,19 @@ const EditBlog = ({ params }: { params: { editBlog: string } }) => {
       });
 
       console.log("Document updated with ID: ", editBlog);
-      alert("Data updated successfully!");
-      router.push("/admin"); // Redirect to the admin page after updating
+      toast.success("Cập nhật thành công!");
     } catch (e) {
       console.error("Error updating document: ", e);
       alert("Error updating data!");
     }
+    setLoading(false);
   };
 
   return (
     <div className="editor-container">
+      <h1 className="text-[30px] text-center py-5 font-mainB">
+        Chỉnh Sửa Blog
+      </h1>
       {/* Title, Description, and Keywords Inputs */}
       <div>
         <div>
@@ -222,7 +228,7 @@ const EditBlog = ({ params }: { params: { editBlog: string } }) => {
       </div>
 
       <button onClick={handleUpdate} className="save-button">
-        Chỉnh Sửa
+        {loading ? "Đang Chỉnh Sửa..." : "Chỉnh Sửa"}
       </button>
     </div>
   );

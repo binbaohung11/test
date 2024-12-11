@@ -2,11 +2,12 @@
 import React, { useState } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "@/lib/firebaseConfig"; // Import Firebase storage config
-import { getFirestore, collection, addDoc } from "firebase/firestore"; // Import Firestore functions
+import { addDoc, collection, getFirestore } from "firebase/firestore"; // Import Firestore functions
 import slugify from "slugify"; // Import slugify
-import "../../../../app/admin/create/createBlog.css"; // Import CSS
+import "../../../../app/admin/create/createBlog.css";
+import { toast } from "react-toastify";
 
 const MyEditor = () => {
   const [editorData, setEditorData] = useState("");
@@ -15,6 +16,7 @@ const MyEditor = () => {
   const [keywords, setKeywords] = useState("");
   const [image, setImage] = useState<File | null>(null); // New state for image file
   const [imageUrl, setImageUrl] = useState(""); // New state for image URL
+  const [loading, setLoading] = useState(false);
   const db = getFirestore();
 
   const handleEditorChange = (event: any, editor: any) => {
@@ -55,7 +57,7 @@ const MyEditor = () => {
             try {
               const file = readEvent.target?.result as ArrayBuffer;
               const fileName = `${Date.now()}-${Math.round(
-                Math.random() * 1e9
+                Math.random() * 1e9,
               )}.png`;
               const storageRef = ref(storage, fileName);
 
@@ -80,7 +82,7 @@ const MyEditor = () => {
 
   function uploadPlugin(editor: any) {
     editor.plugins.get("FileRepository").createUploadAdapter = (
-      loader: any
+      loader: any,
     ) => {
       return uploadAdapter(loader);
     };
@@ -90,6 +92,7 @@ const MyEditor = () => {
     try {
       const slug = generateSlug(title);
       let uploadedImageUrl = imageUrl;
+      setLoading(true);
 
       // Upload the selected image file if there's an image
       if (image) {
@@ -107,11 +110,14 @@ const MyEditor = () => {
         createdAt: new Date(),
       });
       console.log("Document written with ID: ", docRef.id);
-      alert("Data saved successfully!");
+      // add toast-react for success message
+      toast.success("Đã Lưu Dữ Liệu Thành Công!");
+      // Redirect to the blog edit page with the generated slug
     } catch (e) {
       console.error("Error adding document: ", e);
       alert("Error saving data!");
     }
+    setLoading(false);
   };
 
   return (
@@ -173,7 +179,7 @@ const MyEditor = () => {
       </div>
 
       <button onClick={handleSave} className="save-button">
-        Save
+        {loading ? "Đang Lưu..." : "Lưu"}
       </button>
     </div>
   );

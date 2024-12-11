@@ -3,6 +3,7 @@ import React from "react";
 
 const WhyChooseUs = () => {
   const t = useTranslations("Home");
+
   const data = [
     { id: 1, title: t("SmellFree"), description: t("SmellFreeContent") },
     { id: 2, title: t("SmokeFree"), description: t("SmokeFreeContent") },
@@ -46,7 +47,9 @@ const WhyChooseUs = () => {
                       </div>
                     </div>
                     <div className="w-[90%] px-3">
-                      <div className="text-[14px] font-mainB text-[#639F7A]">{data.title}</div>
+                      <div className="text-[14px] font-mainB text-[#639F7A]">
+                        {data.title}
+                      </div>
                       <div className="text-[12px]">{data.description}</div>
                     </div>
                   </div>
@@ -63,7 +66,9 @@ const WhyChooseUs = () => {
                       </div>
                     </div>
                     <div className="w-[90%] px-3">
-                      <div className="text-[14px] font-mainB text-[#639F7A]">{data.title}</div>
+                      <div className="text-[14px] font-mainB text-[#639F7A]">
+                        {data.title}
+                      </div>
                       <div className="text-[12px]">{data.description}</div>
                     </div>
                   </div>
@@ -133,7 +138,7 @@ const WhyChooseUs = () => {
               <div className="w-full flex items-center justify-center">
                 <iframe
                   className="w-full xl:w-[80%] h-[150px] lg:h-[200px] xl:h-[250px]"
-                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                  src="https://www.youtube.com/embed/MuG0U9m7p_Q"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 ></iframe>

@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "@/lib/firebaseConfig";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import slugify from "slugify";
 import "../../../../app/admin/create/createBlog.css";
+import { toast } from "react-toastify";
 
 const MyImage = () => {
   const [title, setTitle] = useState("");
@@ -13,6 +14,7 @@ const MyImage = () => {
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState("");
   const [secondaryImages, setSecondaryImages] = useState<File[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const db = getFirestore();
 
   const generateSlug = (title: string) => {
@@ -32,11 +34,11 @@ const MyImage = () => {
   };
 
   const handleSecondaryImagesChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     if (e.target.files) {
       const filesArray = Array.from(e.target.files);
-      if (filesArray.length > 10) {
+      if (filesArray.length > 25) {
         alert("Bạn chỉ có thể chọn tối đa 10 ảnh phụ.");
         e.target.value = ""; // Clear the file input
         setSecondaryImages([]); // Reset the secondary images array
@@ -48,12 +50,13 @@ const MyImage = () => {
 
   const uploadImageToFirebase = async (file: File) => {
     const fileName = `${Date.now()}-${file.name}`;
-    const storageRef = ref(storage, `images/${fileName}`);
+    const storageRef = ref(storage, `imagess/${fileName}`);
     await uploadBytes(storageRef, file);
     return await getDownloadURL(storageRef);
   };
 
   const handleSave = async () => {
+    setIsLoading(true);
     try {
       const slug = generateSlug(title);
       let uploadedImageUrl = imageUrl;
@@ -79,11 +82,12 @@ const MyImage = () => {
         secondaryImageUrls: secondaryImageUrls, // Store secondary image URLs
       });
       console.log("Document written with ID: ", docRef.id);
-      alert("Data saved successfully!");
+      toast.success("Lưu thành công!");
     } catch (e) {
       console.error("Error adding document: ", e);
       alert("Error saving data!");
     }
+    setIsLoading(false);
   };
 
   return (
@@ -122,7 +126,7 @@ const MyImage = () => {
         </div>
       </div>
       <div>
-        <p className="text-[20px] pt-5">Ảnh Phụ (tối đa 10 ảnh)</p>
+        <p className="text-[20px] pt-5">Ảnh Phụ (tối đa 25 ảnh)</p>
         <input
           type="file"
           accept="image/*"
@@ -133,7 +137,7 @@ const MyImage = () => {
       </div>
 
       <button onClick={handleSave} className="save-button">
-        Save
+        {isLoading ? "Đang Lưu Dữ Liệu..." : "Lưu"}
       </button>
     </div>
   );

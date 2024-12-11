@@ -1,11 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import React, { useEffect, useState } from "react";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "@/lib/firebaseConfig";
-import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 import slugify from "slugify";
 import "../../../../app/admin/create/createBlog.css";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const EditVideo = ({ params }: { params: { editVideo: string } }) => {
   const [title, setTitle] = useState("");
@@ -14,6 +15,7 @@ const EditVideo = ({ params }: { params: { editVideo: string } }) => {
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState("");
   const [youtubeLink, setYoutubeLink] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const db = getFirestore();
 
   useEffect(() => {
@@ -63,6 +65,7 @@ const EditVideo = ({ params }: { params: { editVideo: string } }) => {
   };
 
   const handleSave = async () => {
+    setIsLoading(true);
     try {
       const slug = generateSlug(title);
       let uploadedImageUrl = imageUrl;
@@ -83,11 +86,12 @@ const EditVideo = ({ params }: { params: { editVideo: string } }) => {
         updatedAt: new Date(),
       });
 
-      alert("Video updated successfully!");
+      toast.success("Chỉnh Sửa Video Thành Công!");
     } catch (e) {
       console.error("Error updating document: ", e);
       alert("Error updating video!");
     }
+    setIsLoading(false);
   };
 
   return (
@@ -160,7 +164,7 @@ const EditVideo = ({ params }: { params: { editVideo: string } }) => {
       </div>
 
       <button onClick={handleSave} className="save-button">
-        Save
+        {isLoading ? "Đang Chỉnh Sửa..." : "Chỉnh Sửa"}
       </button>
     </div>
   );

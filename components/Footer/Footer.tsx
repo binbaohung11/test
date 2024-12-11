@@ -3,22 +3,26 @@ import tron from "../../assets/image/contact/highlandbp-logo.png";
 import phone from "../../assets/image/footer/phone-icon.png";
 import mail from "../../assets/image/footer/mail-icon.png";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import fb from "../../assets/image/footer/fb-icon.png";
 import zalo from "../../assets/image/footer/zalo-icon.png";
 import p from "../../assets/image/contact/snap-image.png";
+import tiktok from "../../assets/icons_navbar/tiktok.png";
+import youtube from "../../assets/icons_navbar/youtube.png";
 import {
   fb_help,
   mail_help,
   map_help,
   phone_help,
   snap_help,
+  tiktok_help,
+  youtube_help,
   zalo_help,
 } from "@/lib/helpFunc";
 
 const Footer = () => {
   const t = useTranslations("Footer");
-
+  const locale = useLocale();
   return (
     <>
       {/* Mobile */}
@@ -56,15 +60,28 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex ">
-          <div className="w-[50%]">
-            <p className="text-[14px] font-mainB">{t("Recruitment")}</p>
-            <p className="text-[14px] font-mainB">{t("News")}</p>
+          <div className="w-[50%] flex flex-col">
+            <a
+              href={`${locale}/recruitment`}
+              className="text-[14px] font-mainB"
+            >
+              {t("Recruitment")}
+            </a>
+            <a href={`${locale}/news`} className="text-[14px] font-mainB">
+              {t("News")}
+            </a>
           </div>
           <div className="w-[50%] space-y-2">
             <div className="text-[14px] font-mainB">{t("Connect")}</div>
             <div className="flex space-x-3">
               <a href={fb_help} target="_blank" rel="noopener noreferrer">
                 <Image src={fb} alt="Facebook" className="w-[25px]" />
+              </a>
+              <a href={youtube_help} target="_blank" rel="noopener noreferrer">
+                <Image src={youtube} alt="Facebook" className="w-[25px]" />
+              </a>
+              <a href={tiktok_help} target="_blank" rel="noopener noreferrer">
+                <Image src={tiktok} alt="Facebook" className="w-[25px]" />
               </a>
               <a href={zalo_help} target="_blank" rel="noopener noreferrer">
                 <Image src={zalo} alt="Zalo" className="w-[25px]" />
@@ -87,13 +104,13 @@ const Footer = () => {
               className="w-[43px] md:w-[60px] lg:w-[80px] xl:w-[120px]"
             />
           </div>
-          <div className="w-[60%] text-[14px] md:text-[20px] lg:text-[28px] xl:text-[34px] font-mainB lg:w-[50%] ">
+          <div className="w-[60%] text-[14px] md:text-[20px] lg:text-[28px] xl:text-[34px] font-mainB lg:w-[70%] ">
             {t("Title")}
           </div>
         </div>
         <div className="flex w-full">
           <div className="w-[50%]">
-            <p className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB">
+            <p className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB ">
               {t("Address")}
             </p>
             <a
@@ -130,13 +147,19 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex ">
-          <div className="w-[50%]">
-            <p className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB">
+          <div className="w-[50%] flex flex-col">
+            <a
+              href={`${locale}/recruitment`}
+              className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB hover:underline"
+            >
               {t("Recruitment")}
-            </p>
-            <p className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB">
+            </a>
+            <a
+              href={`${locale}/news`}
+              className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB hover:underline"
+            >
               {t("News")}
-            </p>
+            </a>
           </div>
           <div className="w-[50%] space-y-2">
             <div className="text-[14px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-mainB">
@@ -146,6 +169,20 @@ const Footer = () => {
               <a href={fb_help} target="_blank" rel="noopener noreferrer">
                 <Image
                   src={fb}
+                  alt="Facebook"
+                  className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
+                />
+              </a>
+              <a href={youtube_help} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={youtube}
+                  alt="Facebook"
+                  className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
+                />
+              </a>
+              <a href={tiktok_help} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={tiktok}
                   alt="Facebook"
                   className="w-[25px] md:w-[35px] lg:w-[45px] xl:w-[55px]"
                 />

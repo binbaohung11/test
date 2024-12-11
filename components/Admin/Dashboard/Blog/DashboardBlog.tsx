@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebaseConfig";
 import Link from "next/link";
 import { Pagination, Spin } from "antd"; // Import Spin từ Ant Design
@@ -22,8 +22,6 @@ const DashboardBlog = () => {
   const [loading, setLoading] = useState(true); // State for loading
   const itemsPerPage = 10; // Số lượng item mỗi trang
 
-  console.log(selectedIds);
-
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true); // Set loading to true when starting fetch data
@@ -42,7 +40,7 @@ const DashboardBlog = () => {
 
   const getCollectionData = async (
     collectionName: string,
-    category: string
+    category: string,
   ) => {
     const collectionRef = collection(db, collectionName);
     const querySnapshot = await getDocs(collectionRef);
@@ -60,7 +58,7 @@ const DashboardBlog = () => {
   };
 
   const handleCategoryChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
+    event: React.ChangeEvent<HTMLSelectElement>,
   ) => {
     const selectedCategory = event.target.value;
     setCategory(selectedCategory);
@@ -71,7 +69,7 @@ const DashboardBlog = () => {
     const filtered = data.filter(
       (item) =>
         (selectedCategory ? item.category === selectedCategory : true) &&
-        (item.title?.toLowerCase().includes(searchQuery) || false)
+        (item.title?.toLowerCase().includes(searchQuery) || false),
     );
     setFilteredData(filtered);
     setCurrentPage(1); // Reset page khi lọc dữ liệu
@@ -89,7 +87,7 @@ const DashboardBlog = () => {
     setSelectedIds((prevSelected) =>
       prevSelected.includes(id)
         ? prevSelected.filter((selectedId) => selectedId !== id)
-        : [...prevSelected, id]
+        : [...prevSelected, id],
     );
   };
 
@@ -102,11 +100,33 @@ const DashboardBlog = () => {
     }
   };
 
-  const handleDeleteIndividual = (id: string) => {
+  const handleDeleteIndividual = async (id: string) => {
     if (confirm("Bạn Có Chắc Là Muốn Xóa?")) {
-      const newData = data.filter((item) => item.id !== id);
-      setData(newData);
-      setFilteredData(newData);
+      try {
+        // Find the category of the item to delete
+        const item = data.find((item) => item.id === id);
+        if (!item) throw new Error("Không tìm thấy bài viết!");
+
+        // Delete the document from Firebase
+        const docRef = doc(
+          db,
+          item.category === "Tin Tức"
+            ? "editorData"
+            : item.category === "Hình Ảnh"
+              ? "imageData"
+              : "videoData",
+          id,
+        );
+        await deleteDoc(docRef);
+
+        // Update local state
+        const newData = data.filter((item) => item.id !== id);
+        setData(newData);
+        setFilteredData(newData);
+      } catch (error) {
+        console.error("Lỗi khi xóa:", error);
+        alert("Không thể xóa bài viết.");
+      }
     }
   };
 
@@ -233,7 +253,7 @@ const DashboardBlog = () => {
                     Đã Xuất Bản{" "}
                     {item.createdAt
                       ? `${new Date(
-                          item.createdAt.seconds * 1000
+                          item.createdAt.seconds * 1000,
                         ).toLocaleDateString([], {
                           day: "2-digit",
                           month: "2-digit",
