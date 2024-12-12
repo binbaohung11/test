@@ -29,7 +29,7 @@ import UaE from "../../assets/image/home/flag/united-arab-emirates.png";
 import Nigeria from "../../assets/image/home/flag/nigeria.png";
 import Netherland from "../../assets/image/home/flag/netherlands.png";
 import Iran from "../../assets/image/home/flag/Iran.png";
-import Iraq from "../../assets/image/home/flag/iraq.png";
+import Iraqz from "../../assets/image/home/flag/Icam.png";
 import Lybia from "../../assets/image/home/flag/libya-flag-icon.png";
 import Mali from "../../assets/image/home/flag/Mali.png";
 
@@ -64,7 +64,7 @@ const Present = () => {
     { image: Brazil, title: tFlag("Brazil") },
     { image: Japan, title: tFlag("Japan") },
     { image: RepublicofChina, title: tFlag("Taiwan") },
-    { image: Iraq, title: tFlag("Iraq") },
+    { image: Iraqz, title: tFlag("Iraq") },
     { image: Iran, title: tFlag("Iran") },
     { image: Australia, title: tFlag("Australia") },
     { image: SouthKorea, title: tFlag("South Korea") },
