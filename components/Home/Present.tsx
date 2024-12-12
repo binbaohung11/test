@@ -29,6 +29,7 @@ import UaE from "../../assets/image/home/flag/united-arab-emirates.png";
 import Nigeria from "../../assets/image/home/flag/nigeria.png";
 import Netherland from "../../assets/image/home/flag/netherlands.png";
 import Iran from "../../assets/image/home/flag/Iran.png";
+import Iraq from "../../assets/image/home/flag/iraq.png";
 import Lybia from "../../assets/image/home/flag/libya-flag-icon.png";
 import Mali from "../../assets/image/home/flag/Mali.png";
 
@@ -63,7 +64,7 @@ const Present = () => {
     { image: Brazil, title: tFlag("Brazil") },
     { image: Japan, title: tFlag("Japan") },
     { image: RepublicofChina, title: tFlag("Taiwan") },
-    // { image: Iraq, title: tFlag("Iraq") },
+    { image: Iraq, title: tFlag("Iraq") },
     { image: Iran, title: tFlag("Iran") },
     { image: Australia, title: tFlag("Australia") },
     { image: SouthKorea, title: tFlag("South Korea") },
@@ -111,7 +112,7 @@ const Present = () => {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    className="h-[120px] md:h-[200px] w-[300px] object-contain hover:shadow-2xl"
+                    className="h-[120px] md:h-[200px] w-[300px] object-cover hover:shadow-2xl"
                   />
                 </div>
                 <h3 className="text-[12px] font-mainB text-center md:text-[18px] lg:text-[20px] xl:text-[22px] py-3">
