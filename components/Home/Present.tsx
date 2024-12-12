@@ -5,33 +5,33 @@ import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import Germany from "../../assets/image/home/flag/Flag_of_Germany.svg";
-import Belgium from "../../assets/image/home/flag/Flag_of_Belgium.svg";
-import Brazil from "../../assets/image/home/flag/Flag_of_Brazil.svg";
-import France from "../../assets/image/home/flag/Flag_of_France.svg";
-import Israel from "../../assets/image/home/flag/Flag_of_Israel.svg";
-import Japan from "../../assets/image/home/flag/Flag_of_Japan.svg";
-import Jordan from "../../assets/image/home/flag/Flag_of_Jordan.svg";
-import Kuwait from "../../assets/image/home/flag/Flag_of_Kuwait.svg";
-import Palestine from "../../assets/image/home/flag/Flag_of_Palestine.svg";
-import Russia from "../../assets/image/home/flag/Flag_of_Russia.svg";
-import SaudiArabia from "../../assets/image/home/flag/Flag_of_Saudi_Arabia.svg";
-import SouthAfrica from "../../assets/image/home/flag/Flag_of_South_Africa.svg";
-import SouthKorea from "../../assets/image/home/flag/Flag_of_South_Korea.svg";
-import Turkey from "../../assets/image/home/flag/Flag_of_Turkey.svg";
-import RepublicofChina from "../../assets/image/home/flag/Flag_of_the_Republic_of_China.svg";
-import UK from "../../assets/image/home/flag/Flag_of_the_United_Kingdom_1-2.svg";
-import US from "../../assets/image/home/flag/Flag_of_the_United_States.svg";
+import Germany from "../../assets/image/home/flag/germany.png";
+import Belgium from "../../assets/image/home/flag/belgium.png";
+import Brazil from "../../assets/image/home/flag/brazil.png";
+import France from "../../assets/image/home/flag/france.png";
+import Israel from "../../assets/image/home/flag/israel.png";
+import Japan from "../../assets/image/home/flag/japan.png";
+import Jordan from "../../assets/image/home/flag/jordan.png";
+import Kuwait from "../../assets/image/home/flag/kuwait.png";
+import Palestine from "../../assets/image/home/flag/palestine.png";
+import Russia from "../../assets/image/home/flag/russia.png";
+import SaudiArabia from "../../assets/image/home/flag/SaudiArabia.png";
+import SouthAfrica from "../../assets/image/home/flag/south-africa.png";
+import SouthKorea from "../../assets/image/home/flag/south-korea.png";
+import Turkey from "../../assets/image/home/flag/turkey.png";
+import RepublicofChina from "../../assets/image/home/flag/taiwan.png";
+import UK from "../../assets/image/home/flag/united-kingdom.png";
+import US from "../../assets/image/home/flag/united-states.png";
 
-import Australia from "../../assets/image/home/flag/Flag_of_Australia.png";
-import Lebanon from "../../assets/image/home/flag/Flag_of_Lebanon.svg";
-import UaE from "../../assets/image/home/flag/uae.png";
-import Nigeria from "../../assets/image/home/flag/flag-for-flag-nigeria.svg";
-import Netherland from "../../assets/image/home/flag/Flag-of-Netherlands.svg";
+import Australia from "../../assets/image/home/flag/Australia.png";
+import Lebanon from "../../assets/image/home/flag/Lebanon.png";
+import UaE from "../../assets/image/home/flag/united-arab-emirates.png";
+import Nigeria from "../../assets/image/home/flag/nigeria.png";
+import Netherland from "../../assets/image/home/flag/netherlands.png";
 import Iran from "../../assets/image/home/flag/Iran.png";
-import Iraq from "../../assets/image/home/flag/Iraq.png";
-import Lybia from "../../assets/image/home/flag/libya-flag-icon.webp";
-import Mali from "../../assets/image/home/flag/Flag_of_Mali.png";
+import Iraq from "../../assets/image/home/flag/iraq.png";
+import Lybia from "../../assets/image/home/flag/libya-flag-icon.png";
+import Mali from "../../assets/image/home/flag/Mali.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -112,7 +112,7 @@ const Present = () => {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    className="h-[120px] md:h-[200px] w-[300px] object-cover hover:shadow-2xl"
+                    className="h-[120px] md:h-[200px] w-[300px] object-contain hover:shadow-2xl"
                   />
                 </div>
                 <h3 className="text-[12px] font-mainB text-center md:text-[18px] lg:text-[20px] xl:text-[22px] py-3">
