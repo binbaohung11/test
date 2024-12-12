@@ -112,7 +112,7 @@ const News: React.FC = () => {
                 alt={item.title}
                 width={1000}
                 height={1000}
-                className="h-[130px] md:h-[280px] rounded-[10px]"
+                className="h-[130px] md:h-[280px] rounded-[10px] md:max-w-[600px]  transition duration-300 ease-in-out"
               />
               <p className="text-[12px] lg:text-[16px] text-[#969696] px-2">
                 {new Date(item.createdAt.seconds * 1000).toLocaleDateString()}
